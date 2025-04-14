@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Scan Attendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Scan Attendance</h1>
+<h4>Scan QR Code</h4>
+<hr />
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Webcam Feed</label>
+            <video id="webcam" autoplay playsinline width="100%"></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+        <div class="form-group">
+            <button id="startScan" class="btn btn-primary">Start Scanning</button>
+            <button id="stopScan" class="btn btn-secondary" disabled>Stop Scanning</button>
+        </div>
+        <div id="result" class="form-group">
+            <label>Scan Result:</label>
+            <p id="scanResult">Waiting for scan...</p>
+        </div>
+        <form id="attendanceForm" asp-action="ScanAttendance" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" id="employeeId" name="EmployeeId" />
+            <input type="submit" value="Submit Attendance" class="btn btn-success" id="submitAttendance" disabled />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script>
+        const video = document.getElementById("webcam");
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const startScanBtn = document.getElementById("startScan");
+        const stopScanBtn = document.getElementById("stopScan");
+        const scanResult = document.getElementById("scanResult");
+        const employeeIdInput = document.getElementById("employeeId");
+        const submitAttendanceBtn = document.getElementById("submitAttendance");
+        let stream = null;
+        let isScanning = false;
+
+        startScanBtn.addEventListener("click", async () => {
+            try {
+                // Try rear camera, fallback to any available camera
+                stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: { ideal: "environment" } }
+                });
+                video.srcObject = stream;
+                video.onloadedmetadata = () => {
+                    video.play();
+                    startScanBtn.disabled = true;
+                    stopScanBtn.disabled = false;
+                    isScanning = true;
+                    scanQRCode();
+                };
+            } catch (err) {
+                scanResult.textContent = `Error accessing webcam: ${err.message}`;
+                console.error(err);
+            }
+        });
+
+        stopScanBtn.addEventListener("click", () => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                stream = null;
+            }
+            video.srcObject = null;
+            startScanBtn.disabled = false;
+            stopScanBtn.disabled = true;
+            scanResult.textContent = "Waiting for scan...";
+            submitAttendanceBtn.disabled = true;
+            employeeIdInput.value = "";
+            isScanning = false;
+        });
+
+        function scanQRCode() {
+            if (!isScanning || !video.srcObject) {
+                return;
+            }
+
+            if (video.videoWidth === 0 || video.videoHeight === 0) {
+                requestAnimationFrame(scanQRCode);
+                return;
+            }
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const code = jsQR(imageData.data, imageData.width, imageData.height);
+                if (code && code.data) {
+                    const match = code.data.match(/EmployeeID:\s*(\d+)/);
+                    if (match && match[1]) {
+                        const employeeId = match[1];
+                        scanResult.textContent = `Employee ID: ${employeeId}`;
+                        employeeIdInput.value = employeeId;
+                        submitAttendanceBtn.disabled = false;
+                        // Do not auto-stop; let user confirm
+                    } else {
+                        scanResult.textContent = "Invalid QR code format.";
+                    }
+                }
+            } catch (err) {
+                scanResult.textContent = `Error scanning QR code: ${err.message}`;
+                console.error(err);
+            }
+
+            requestAnimationFrame(scanQRCode);
+        }
+
+        // Optional: Add confirmation before form submission
+        document.getElementById("attendanceForm").addEventListener("submit", (e) => {
+            if (!confirm("Confirm attendance submission for Employee ID: " + employeeIdInput.value + "?")) {
+                e.preventDefault();
+            }
+        });
+    </script>
+}
