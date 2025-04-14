@@ -1,21 +1,46 @@
 ﻿@model HRMmanagement.Models.LeaveRequest
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Leave Request";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>LeaveRequest</h4>
+<h1>Create Leave Request</h1>
+<h4>Scan QR Code or Enter Manually</h4>
 <hr />
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Webcam Feed</label>
+            <video id="webcam" autoplay playsinline width="100%"></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+        <div class="form-group">
+            <button id="startScan" class="btn btn-primary">Start Scanning</button>
+            <button id="stopScan" class="btn btn-secondary" disabled>Stop Scanning</button>
+        </div>
+        <div id="result" class="form-group">
+            <label>Scan Result:</label>
+            <p id="scanResult">Waiting for scan...</p>
+        </div>
+        <form id="leaveRequestForm" asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="EmployeeId" class="control-label"></label>
-                <select asp-for="EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <input asp-for="EmployeeId" class="form-control" id="employeeId" readonly />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LeaveType" class="control-label"></label>
@@ -24,12 +49,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <input asp-for="StartDate" class="form-control" type="date" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
+                <input asp-for="EndDate" class="form-control" type="date" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -43,7 +68,7 @@
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Submit Leave Request" class="btn btn-success" id="submitLeaveRequest" disabled />
             </div>
         </form>
     </div>
@@ -54,5 +79,95 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script>
+        const video = document.getElementById("webcam");
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const startScanBtn = document.getElementById("startScan");
+        const stopScanBtn = document.getElementById("stopScan");
+        const scanResult = document.getElementById("scanResult");
+        const employeeIdInput = document.getElementById("employeeId");
+        const submitLeaveRequestBtn = document.getElementById("submitLeaveRequest");
+        let stream = null;
+        let isScanning = false;
+
+        startScanBtn.addEventListener("click", async () => {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: { ideal: "environment" } }
+                });
+                video.srcObject = stream;
+                video.onloadedmetadata = () => {
+                    video.play();
+                    startScanBtn.disabled = true;
+                    stopScanBtn.disabled = false;
+                    isScanning = true;
+                    scanQRCode();
+                };
+            } catch (err) {
+                scanResult.textContent = `Error accessing webcam: ${err.message}`;
+                console.error(err);
+            }
+        });
+
+        stopScanBtn.addEventListener("click", () => {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                stream = null;
+            }
+            video.srcObject = null;
+            startScanBtn.disabled = false;
+            stopScanBtn.disabled = true;
+            scanResult.textContent = "Waiting for scan...";
+            submitLeaveRequestBtn.disabled = true;
+            employeeIdInput.value = "";
+            isScanning = false;
+        });
+
+        function scanQRCode() {
+            if (!isScanning || !video.srcObject) {
+                return;
+            }
+
+            if (video.videoWidth === 0 || video.videoHeight === 0) {
+                requestAnimationFrame(scanQRCode);
+                return;
+            }
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const code = jsQR(imageData.data, imageData.width, imageData.height);
+                if (code && code.data) {
+                    const match = code.data.match(/EmployeeID:\s*(\d+)/);
+                    if (match && match[1]) {
+                        const employeeId = match[1];
+                        scanResult.textContent = `Employee ID: ${employeeId}`;
+                        employeeIdInput.value = employeeId;
+                        submitLeaveRequestBtn.disabled = false;
+                    } else {
+                        scanResult.textContent = "Invalid QR code format.";
+                    }
+                }
+            } catch (err) {
+                scanResult.textContent = `Error scanning QR code: ${err.message}`;
+                console.error(err);
+            }
+
+            requestAnimationFrame(scanQRCode);
+        }
+
+        document.getElementById("leaveRequestForm").addEventListener("submit", (e) => {
+            if (!confirm("Confirm leave request submission for Employee ID: " + employeeIdInput.value + "?")) {
+                e.preventDefault();
+            }
+        });
+    </script>
 }

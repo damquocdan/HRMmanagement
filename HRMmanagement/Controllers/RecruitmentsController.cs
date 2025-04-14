@@ -56,17 +56,36 @@ namespace HRMmanagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CandidateId,FullName,Email,Phone,AppliedPositionId,Cvpath,InterviewDate,Status,CreatedAt")] Recruitment recruitment)
+        public async Task<IActionResult> Create([Bind("RecruitmentId,FullName,Email,Phone,AppliedPositionId,InterviewDate,Status")] Recruitment recruitment, IFormFile CvFile)
         {
             if (ModelState.IsValid)
             {
+                if (CvFile != null && CvFile.Length > 0)
+                {
+                    var fileName = Path.GetFileName(CvFile.FileName);
+                    var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/cv");
+                    Directory.CreateDirectory(uploadPath); // Tạo thư mục nếu chưa có
+
+                    var filePath = Path.Combine(uploadPath, fileName);
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await CvFile.CopyToAsync(stream);
+                    }
+
+                    recruitment.Cvpath = "/uploads/cv/" + fileName;
+                }
+
+                recruitment.Status = "Chờ xử lý"; // Gán trạng thái mặc định
+
                 _context.Add(recruitment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AppliedPositionId"] = new SelectList(_context.Positions, "PositionId", "PositionId", recruitment.AppliedPositionId);
+
+            ViewData["AppliedPositionId"] = new SelectList(_context.Positions, "PositionId", "PositionName", recruitment.AppliedPositionId);
             return View(recruitment);
         }
+
 
         // GET: Recruitments/Edit/5
         public async Task<IActionResult> Edit(int? id)
