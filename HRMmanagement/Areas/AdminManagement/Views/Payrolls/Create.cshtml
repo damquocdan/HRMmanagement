@@ -1,73 +1,77 @@
 ﻿@model HRMmanagement.Models.Payroll
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo Mới";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Create</h1>
+<h1 style="color: #213d86;"><i class="fas fa-plus-circle"></i> Tạo Mới</h1>
 
-<h4>Payroll</h4>
-<hr />
+<h4 style="color: #213d86;">Bảng Lương</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <select asp-for="EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <label asp-for="EmployeeId" class="control-label" style="color: #213d86;"><i class="fas fa-user"></i> Nhân Viên</label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Month" class="control-label"></label>
+                <label asp-for="Month" class="control-label" style="color: #213d86;"><i class="far fa-calendar-alt"></i> Tháng</label>
                 <input asp-for="Month" class="form-control" />
                 <span asp-validation-for="Month" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Year" class="control-label"></label>
+                <label asp-for="Year" class="control-label" style="color: #213d86;"><i class="far fa-calendar"></i> Năm</label>
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BaseSalary" class="control-label"></label>
+                <label asp-for="BaseSalary" class="control-label" style="color: #213d86;"><i class="fas fa-coins"></i> Lương Cơ Bản</label>
                 <input asp-for="BaseSalary" class="form-control" />
                 <span asp-validation-for="BaseSalary" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Allowance" class="control-label"></label>
+                <label asp-for="Allowance" class="control-label" style="color: #213d86;"><i class="fas fa-piggy-bank"></i> Phụ Cấp</label>
                 <input asp-for="Allowance" class="form-control" />
                 <span asp-validation-for="Allowance" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Bonus" class="control-label"></label>
+                <label asp-for="Bonus" class="control-label" style="color: #213d86;"><i class="fas fa-gift"></i> Thưởng</label>
                 <input asp-for="Bonus" class="form-control" />
                 <span asp-validation-for="Bonus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tax" class="control-label"></label>
+                <label asp-for="Tax" class="control-label" style="color: #f7941c;"><i class="fas fa-percentage"></i> Thuế</label>
                 <input asp-for="Tax" class="form-control" />
                 <span asp-validation-for="Tax" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Insurance" class="control-label"></label>
+                <label asp-for="Insurance" class="control-label" style="color: #213d86;"><i class="fas fa-shield-alt"></i> Bảo Hiểm</label>
                 <input asp-for="Insurance" class="form-control" />
                 <span asp-validation-for="Insurance" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NetSalary" class="control-label"></label>
+                <label asp-for="NetSalary" class="control-label" style="color: #00984b;"><i class="fas fa-money-bill-alt"></i> Lương Thực Nhận</label>
                 <input asp-for="NetSalary" class="form-control" />
                 <span asp-validation-for="NetSalary" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" value="Tạo" class="btn btn-primary" style="background-color: #00984b; border-color: #00984b;"><i class="fas fa-save"></i> Tạo</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary" style="color: #213d86;"><i class="fas fa-arrow-left"></i> Quay lại Danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

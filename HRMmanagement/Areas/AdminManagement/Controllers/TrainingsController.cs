@@ -48,10 +48,52 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
         // GET: AdminManagement/Trainings/Create
         public IActionResult Create()
         {
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "EmployeeId");
+            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName");
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> UpdateResult(int id, string result)
+        {
+            try
+            {
+                var training = await _context.Training.FindAsync(id);
+                if (training == null)
+                {
+                    return Json(new { success = false, message = "Không tìm thấy bản ghi đào tạo." });
+                }
 
+                training.Result = result;
+                _context.Update(training);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateEvaluation(int id, string evaluation)
+        {
+            try
+            {
+                var training = await _context.Training.FindAsync(id);
+                if (training == null)
+                {
+                    return Json(new { success = false, message = "Không tìm thấy bản ghi đào tạo." });
+                }
+
+                training.Evaluation = evaluation;
+                _context.Update(training);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
         // POST: AdminManagement/Trainings/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -65,7 +107,7 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "EmployeeId", training.EmployeeId);
+            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName", training.EmployeeId);
             return View(training);
         }
 
@@ -82,7 +124,7 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
             {
                 return NotFound();
             }
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "EmployeeId", training.EmployeeId);
+            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName", training.EmployeeId);
             return View(training);
         }
 

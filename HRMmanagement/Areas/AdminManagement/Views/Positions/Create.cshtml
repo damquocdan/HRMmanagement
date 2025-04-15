@@ -1,39 +1,41 @@
 ﻿@model HRMmanagement.Models.Position
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo mới";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Create</h1>
+<h1 style="color: #213d86;"><i class="fa fa-plus-circle"></i> Tạo mới Vị trí</h1>
 
-<h4>Position</h4>
-<hr />
+<h4 style="color: #213d86;"><i class="fa fa-briefcase"></i> Thông tin Vị trí</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="border: 1px solid #f7941c; padding: 10px; border-radius: 5px; background-color: #fff;"></div>
             <div class="form-group">
-                <label asp-for="PositionName" class="control-label"></label>
-                <input asp-for="PositionName" class="form-control" />
+                <label asp-for="PositionName" class="control-label" style="color: #213d86;"><i class="fa fa-id-card-o"></i> Tên vị trí</label>
+                <input asp-for="PositionName" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="PositionName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <label asp-for="Description" class="control-label" style="color: #213d86;"><i class="fa fa-info-circle"></i> Mô tả</label>
+                <input asp-for="Description" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" value="Tạo mới" class="btn btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-save"></i> Tạo mới</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color: #213d86;"><i class="fa fa-arrow-left"></i> Trở về danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

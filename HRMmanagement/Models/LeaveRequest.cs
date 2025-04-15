@@ -8,22 +8,33 @@ public partial class LeaveRequest : IValidatableObject
 {
     public int LeaveId { get; set; }
 
+    [Display(Name = "Mã nhân viên")]
     public int? EmployeeId { get; set; }
 
+    [Display(Name = "Loại nghỉ phép")]
     public string? LeaveType { get; set; }
 
     [Required(ErrorMessage = "Vui lòng chọn ngày bắt đầu.")]
+    [Display(Name = "Ngày bắt đầu")]
+    [DataType(DataType.Date)]
     public DateOnly? StartDate { get; set; }
 
     [Required(ErrorMessage = "Vui lòng chọn ngày kết thúc.")]
+    [Display(Name = "Ngày kết thúc")]
+    [DataType(DataType.Date)]
     public DateOnly? EndDate { get; set; }
 
+    [Display(Name = "Lý do")]
     public string? Reason { get; set; }
 
+    [Display(Name = "Trạng thái")]
     public string? Status { get; set; }
 
+    [Display(Name = "Ngày tạo")]
+    [DataType(DataType.DateTime)]
     public DateTime? CreatedAt { get; set; }
 
+    [Display(Name = "Nhân viên")]
     public virtual Employee? Employee { get; set; }
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

@@ -1,60 +1,64 @@
 ﻿@model HRMmanagement.Models.Admin
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Sửa Thông Tin Admin";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Edit</h1>
+<h1 style="color: #213d86;"><i class="fas fa-edit"></i> Sửa Thông Tin Admin</h1>
 
-<h4>Admin</h4>
-<hr />
+<h4>Thông Tin Admin</h4>
+<hr style="border-top: 2px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AdminId" />
             <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
+                <label asp-for="Username" class="control-label" style="color: #213d86;"><i class="fas fa-user"></i> Tên Đăng Nhập</label>
                 <input asp-for="Username" class="form-control" />
                 <span asp-validation-for="Username" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
+                <label asp-for="Password" class="control-label" style="color: #213d86;"><i class="fas fa-key"></i> Mật Khẩu</label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
+                <label asp-for="FullName" class="control-label" style="color: #213d86;"><i class="fas fa-id-card"></i> Họ và Tên</label>
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label" style="color: #213d86;"><i class="fas fa-envelope"></i> Email</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
+                <label asp-for="Phone" class="control-label" style="color: #213d86;"><i class="fas fa-phone"></i> Số Điện Thoại</label>
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
+                <label asp-for="CreatedAt" class="control-label" style="color: #213d86;"><i class="fas fa-calendar-alt"></i> Ngày Tạo</label>
                 <input asp-for="CreatedAt" class="form-control" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Lưu" class="btn btn-primary" style="background-color: #00984b; border-color: #00984b;" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color: #00adef; text-decoration: none;"><i class="fas fa-arrow-left"></i> Trở lại danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

@@ -1,58 +1,62 @@
 ﻿@model HRMmanagement.Models.LeaveRequest
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo Mới";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Create</h1>
+<h1 style="color: #213d86;"><i class="fas fa-plus-circle"></i> Tạo Mới</h1>
 
-<h4>LeaveRequest</h4>
-<hr />
+<h4 style="color: #213d86;">Yêu Cầu Nghỉ Phép</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <select asp-for="EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <label asp-for="EmployeeId" class="control-label" style="color: #213d86;"><i class="fas fa-user"></i> Nhân Viên</label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="LeaveType" class="control-label"></label>
+                <label asp-for="LeaveType" class="control-label" style="color: #213d86;"><i class="far fa-calendar-alt"></i> Loại Nghỉ</label>
                 <input asp-for="LeaveType" class="form-control" />
                 <span asp-validation-for="LeaveType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
+                <label asp-for="StartDate" class="control-label" style="color: #213d86;"><i class="far fa-calendar-check"></i> Ngày Bắt Đầu</label>
                 <input asp-for="StartDate" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
+                <label asp-for="EndDate" class="control-label" style="color: #213d86;"><i class="far fa-calendar-times"></i> Ngày Kết Thúc</label>
                 <input asp-for="EndDate" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Reason" class="control-label"></label>
+                <label asp-for="Reason" class="control-label" style="color: #213d86;"><i class="fas fa-file-alt"></i> Lý Do</label>
                 <input asp-for="Reason" class="form-control" />
                 <span asp-validation-for="Reason" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
+                <label asp-for="Status" class="control-label" style="color: #213d86;"><i class="fas fa-check-circle"></i> Trạng Thái</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" class="btn btn-primary" style="background-color: #00984b; border-color: #00984b;"><i class="fas fa-save"></i> Tạo</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary" style="color: #213d86;"><i class="fas fa-arrow-left"></i> Quay lại Danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

@@ -1,90 +1,132 @@
 ﻿@model IEnumerable<HRMmanagement.Models.Payroll>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bảng Lương";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1 style="color: #213d86;"><i class="fas fa-money-bill-wave"></i> Bảng Lương</h1>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+<!-- Search and Filter Form -->
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="Index" method="get" class="row">
+            <div class="col-md-3">
+                <input type="text" name="searchName" class="form-control" placeholder="Tìm kiếm theo tên nhân viên" value="@ViewBag.SearchName" />
+            </div>
+            <div class="col-md-2">
+                <select name="filterMonth" class="form-control">
+                    <option value="">Tất cả tháng</option>
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        <option value="@i" selected="@(ViewBag.FilterMonth == i.ToString() ? "selected" : null)">Tháng @i</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select name="sortNetSalary" class="form-control">
+                    <option value="">Sắp xếp lương thực nhận</option>
+                    <option value="asc" selected="@(ViewBag.SortNetSalary == "asc" ? "selected" : null)">Tăng dần</option>
+                    <option value="desc" selected="@(ViewBag.SortNetSalary == "desc" ? "selected" : null)">Giảm dần</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Tìm kiếm</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <form asp-action="CalculatePayroll" method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="number" name="month" class="form-control" placeholder="Tháng" required min="1" max="12" />
+                </div>
+                <div class="col-md-4">
+                    <input type="number" name="year" class="form-control" placeholder="Năm" required min="2000" max="2100" value="2025" />
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Tính lương</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Month)
+                <i class="fas fa-user" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.Employee)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Year)
+                <i class="far fa-calendar-alt" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.Month)/Năm
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BaseSalary)
+                <i class="fas fa-coins" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.BaseSalary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Allowance)
+                <i class="fas fa-piggy-bank" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.Allowance)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bonus)
+                <i class="fas fa-gift" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.Bonus)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tax)
+                <i class="fas fa-percentage" style="color: #f7941c;"></i> @Html.DisplayNameFor(model => model.Tax)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Insurance)
+                <i class="fas fa-shield-alt" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.Insurance)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NetSalary)
+                <i class="fas fa-money-bill-alt" style="color: #00984b;"></i> @Html.DisplayNameFor(model => model.NetSalary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee)
+                <i class="far fa-clock" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.CreatedAt)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Month)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BaseSalary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Allowance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bonus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Insurance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NetSalary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PayrollId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PayrollId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PayrollId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Month)/@Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", item.BaseSalary)
+                </td>
+                <td>
+                    @String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", item.Allowance)
+                </td>
+                <td>
+                    @String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", item.Bonus)
+                </td>
+                <td>
+                    @String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", item.Tax)
+                </td>
+                <td>
+                    @String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", item.Insurance)
+                </td>
+                <td>
+                    @String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:C0}", item.NetSalary)
+                </td>
+                <td>
+                    @item.CreatedAt?.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.PayrollId" class="btn btn-info btn-sm" style="background-color: #213d86; border-color: #213d86;"><i class="fas fa-info-circle"></i> Chi Tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.PayrollId" class="btn btn-danger btn-sm" style="background-color: #f7941c; border-color: #f7941c;"><i class="fas fa-trash-alt"></i> Xóa</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

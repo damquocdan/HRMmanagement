@@ -1,61 +1,47 @@
 ﻿@model HRMmanagement.Models.Attendance
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Details</h1>
+<h1 style="color: #213d86;"><i class="fa fa-eye"></i> Chi tiết Chấm công</h1>
 
 <div>
-    <h4>Attendance</h4>
-    <hr />
+    <h4 style="color: #213d86;"><i class="fa fa-calendar-check-o"></i> Thông tin Chấm công</h4>
+    <hr style="border-top: 1px solid #00adef;" />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AttendanceDate)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-calendar"></i> @Html.DisplayNameFor(model => model.AttendanceDate)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AttendanceDate)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CheckInTime)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-sign-in"></i> @Html.DisplayNameFor(model => model.CheckInTime)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CheckInTime)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CheckOutTime)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-sign-out"></i> @Html.DisplayNameFor(model => model.CheckOutTime)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CheckOutTime)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OvertimeHours)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-hourglass-half"></i> @Html.DisplayNameFor(model => model.OvertimeHours)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OvertimeHours)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-check-circle-o"></i> @Html.DisplayNameFor(model => model.Status)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-clock-o"></i> @Html.DisplayNameFor(model => model.CreatedAt)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreatedAt)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Employee)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-user"></i> @Html.DisplayNameFor(model => model.Employee)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Employee.EmployeeId)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.AttendanceId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.AttendanceId" class="btn btn-sm btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-pencil"></i> Sửa</a> |
+    <a asp-action="Index" style="color: #213d86;"><i class="fa fa-arrow-left"></i> Trở về danh sách</a>
 </div>

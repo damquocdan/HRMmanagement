@@ -1,55 +1,33 @@
 ﻿@model HRMmanagement.Models.Admin
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Admin";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Details</h1>
+<h1 style="color: #213d86;"><i class="fas fa-info-circle"></i> Chi Tiết Admin</h1>
 
 <div>
-    <h4>Admin</h4>
-    <hr />
+    <h4>Thông Tin Admin</h4>
+    <hr style="border-top: 2px solid #00adef;" />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-user"></i> @Html.DisplayNameFor(model => model.Username)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Username)</dd>
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-key"></i> @Html.DisplayNameFor(model => model.Password)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Password)</dd>
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-id-card"></i> @Html.DisplayNameFor(model => model.FullName)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.FullName)</dd>
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-envelope"></i> @Html.DisplayNameFor(model => model.Email)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Email)</dd>
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-phone"></i> @Html.DisplayNameFor(model => model.Phone)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Phone)</dd>
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-calendar-alt"></i> @Html.DisplayNameFor(model => model.CreatedAt)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreatedAt)</dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.AdminId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.AdminId" style="color: #00adef; text-decoration: none;"><i class="fas fa-edit"></i> Sửa</a> 
+    <a asp-action="Index" style="color: #00adef; text-decoration: none;"><i class="fas fa-arrow-left"></i> Trở lại danh sách</a>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

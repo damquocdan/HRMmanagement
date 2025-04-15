@@ -44,7 +44,20 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
 
             return View(recruitment);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateStatus(int id, string status)
+        {
+            var recruitment = await _context.Recruitments.FindAsync(id);
+            if (recruitment == null)
+            {
+                return Json(new { success = false });
+            }
 
+            recruitment.Status = status;
+            await _context.SaveChangesAsync();
+            return Json(new { success = true });
+        }
         // GET: AdminManagement/Recruitments/Create
         public IActionResult Create()
         {

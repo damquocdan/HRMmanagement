@@ -1,31 +1,27 @@
 ﻿@model HRMmanagement.Models.Department
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Details</h1>
+<h1 style="color: #213d86;"><i class="fa fa-eye"></i> Chi tiết Phòng ban</h1>
 
 <div>
-    <h4>Department</h4>
-    <hr />
+    <h4 style="color: #213d86;"><i class="fa fa-building"></i> Thông tin Phòng ban</h4>
+    <hr style="border-top: 1px solid #00adef;" />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DepartmentName)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-tag"></i> @Html.DisplayNameFor(model => model.DepartmentName)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DepartmentName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fa fa-info-circle"></i> @Html.DisplayNameFor(model => model.Description)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.DepartmentId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.DepartmentId" class="btn btn-sm btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-pencil"></i> Sửa</a> |
+    <a asp-action="Index" style="color: #213d86;"><i class="fa fa-arrow-left"></i> Trở về danh sách</a>
 </div>

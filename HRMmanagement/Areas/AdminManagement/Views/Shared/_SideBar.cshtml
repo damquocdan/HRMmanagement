@@ -1,8 +1,8 @@
-﻿﻿﻿﻿@using Microsoft.AspNetCore.Http;
+﻿@using Microsoft.AspNetCore.Http;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 <aside class="main-sidebar sidebar-custom elevation-4 position-fixed">
     <!-- Brand Logo -->
-    <a href="/adminmanagement/dashboard" class="brand-link" style="background-color: #ed3d34; color: white;">
+    <a href="/adminmanagement/dashboard" class="brand-link" style="background-color: #00adef; color: white;">
         <img src="~/images/Logo.png" alt="Logo" width="75px">
         <span class="brand-text font-weight-light ms-2">Quản lý</span>
     </a>
@@ -10,7 +10,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex position-fixed bottom-0" style="border-top: 1px solid #f7b1ae;">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex position-fixed bottom-0" style="border-top: 1px solid #00adef;">
             <div class="image">
                 <img src="~/images/Logo.png" class="img-circle elevation-2" alt="Logo">
             </div>
@@ -18,12 +18,12 @@
                 @{
                     if (HttpContextAccessor.HttpContext.Session.GetString("AdminLogin") != null)
                     {
-                        <a href="#" class="d-block">@HttpContextAccessor.HttpContext.Session.GetString("AdminLogin")</a>
-                        <a asp-action="Logout" asp-controller="Login" class="logout-link">Đăng xuất</a>
+                        <a href="#" class="d-block" style="color: #213d86;">@HttpContextAccessor.HttpContext.Session.GetString("AdminLogin")</a>
+                        <a asp-action="Logout" asp-controller="Login" class="logout-link" style="color: #f7941c;">Đăng xuất</a>
                     }
                     else
                     {
-                        <a href="#" class="d-block">Admin Sỹ</a>
+                        <a href="#" class="d-block" style="color: #213d86;">Admin Sỹ</a>
                     }
                 }
             </div>
@@ -32,12 +32,12 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Menu Item Template -->
+                <!-- Menu Item: Tài khoản Admin -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="icon-container">
-                                <i class="fa-solid fa-user-tie fa-xl"></i>
+                                <i class="fa-solid fa-user-shield fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Tài khoản Admin
@@ -47,25 +47,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Admins" asp-action="Index" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Admins" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Admins" asp-action="Create" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Admins" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-user-plus nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
+                <!-- Menu Item: Quản lý khách hàng -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-house-user fa-xl"></i>
+                                <i class="fa-solid fa-users fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý khách hàng
@@ -75,26 +76,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Employees" asp-action="Index" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Employees" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Employees" asp-action="Create" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Employees" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-user-plus nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
 
+                <!-- Menu Item: Quản lý phòng ban -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-house-user fa-xl"></i>
+                                <i class="fa-solid fa-building fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý phòng ban
@@ -104,26 +105,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Departments" asp-action="Index" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Departments" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Departments" asp-action="Create" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Departments" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
 
+                <!-- Menu Item: Quản lý chức vụ -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-briefcase fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý chức vụ
@@ -133,24 +134,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Positions" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Positions" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Positions" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Positions" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                <!-- Menu Item: Quản lý chấm công -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-clock fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý chấm công
@@ -160,24 +163,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Attendances" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Attendances" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Attendances" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Attendances" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                <!-- Menu Item: Quản lý nghỉ phép -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-calendar-times fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý nghỉ phép
@@ -187,24 +192,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="LeaveRequests" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="LeaveRequests" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="LeaveRequests" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="LeaveRequests" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                <!-- Menu Item: Quản lý lương -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-money-check-alt fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý lương
@@ -214,24 +221,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Payroll" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Payrolls" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Payroll" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Payrolls" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                <!-- Menu Item: Quản lý tuyển dụng -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-user-plus fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý tuyển dụng
@@ -241,24 +250,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Recruitments" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Recruitments" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Recruitments" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Recruitments" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                <!-- Menu Item: Quản lý đào tạo -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-graduation-cap fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý đào tạo
@@ -268,24 +279,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="Trainings" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="Trainings" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Trainings" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="Trainings" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+
+                <!-- Menu Item: Quản lý đánh giá hiệu suất -->
+@*                 <li class="nav-item">
+                    <a href="#" class="nav-link" style="color: #213d86;">
                         <div class="d-flex align-items-center">
                             <div class="d-flex justify-content-center" style="width: 30px">
-                                <i class="fa-solid fa-list fa-xl"></i>
+                                <i class="fa-solid fa-chart-line fa-xl" style="color: #00adef;"></i>
                             </div>
                             <p class="ms-3">
                                 Quản lý đánh giá hiệu suất
@@ -295,19 +308,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-controller="PerformanceEvaluations" asp-action="Index" class="nav-link">
-                                <i class="fas fa-plus-circle nav-icon"></i>
+                            <a asp-controller="PerformanceEvaluations" asp-action="Index" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-list nav-icon" style="color: #00adef;"></i>
                                 <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="PerformanceEvaluations" asp-action="Create" class="nav-link">
-                                <i class="fas fa-edit nav-icon"></i>
+                            <a asp-controller="PerformanceEvaluations" asp-action="Create" class="nav-link" style="color: #213d86;">
+                                <i class="fas fa-plus-circle nav-icon" style="color: #00984b;"></i>
                                 <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> *@
             </ul>
         </nav>
     </div>

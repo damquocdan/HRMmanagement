@@ -1,79 +1,61 @@
 ﻿@model HRMmanagement.Models.Payroll
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Details</h1>
+<h1 style="color: #213d86;"><i class="fas fa-info-circle"></i> Chi Tiết</h1>
 
 <div>
-    <h4>Payroll</h4>
-    <hr />
+    <h4 style="color: #213d86;">Bảng Lương</h4>
+    <hr style="border-top: 1px solid #00adef;" />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Month)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-calendar-alt"></i> Tháng</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Month)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-calendar"></i> Năm</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Year)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BaseSalary)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-coins"></i> Lương Cơ Bản</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.BaseSalary)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Allowance)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-piggy-bank"></i> Phụ Cấp</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Allowance)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Bonus)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-gift"></i> Thưởng</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Bonus)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tax)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #f7941c;"><i class="fas fa-percentage"></i> Thuế</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Tax)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Insurance)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-shield-alt"></i> Bảo Hiểm</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Insurance)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NetSalary)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #00984b;"><i class="fas fa-money-bill-alt"></i> Lương Thực Nhận</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NetSalary)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-clock"></i> Ngày Tạo</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreatedAt)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Employee)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-user"></i> Nhân Viên</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Employee.EmployeeId)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.PayrollId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.PayrollId" class="btn btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fas fa-edit"></i> Sửa</a> |
+    <a asp-action="Index" class="btn btn-secondary" style="color: #213d86;"><i class="fas fa-arrow-left"></i> Quay lại Danh sách</a>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

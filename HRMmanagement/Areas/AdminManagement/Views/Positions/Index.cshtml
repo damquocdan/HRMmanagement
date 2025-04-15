@@ -1,42 +1,39 @@
 ﻿@model IEnumerable<HRMmanagement.Models.Position>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Vị trí";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1 style="color: #213d86;"><i class="fa fa-briefcase"></i> Danh sách Vị trí</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-plus"></i> Tạo mới</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-bordered table-striped">
+    <thead style="background-color: #f8f9fa;">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PositionName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th></th>
+            <th style="color: #213d86;"><i class="fa fa-id-card-o"></i> @Html.DisplayNameFor(model => model.PositionName)</th>
+            <th style="color: #213d86;"><i class="fa fa-info-circle"></i> @Html.DisplayNameFor(model => model.Description)</th>
+            <th style="color: #213d86;"><i class="fa fa-cog"></i> Thao tác</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PositionName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PositionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PositionId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PositionId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PositionId" class="btn btn-sm btn-info" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-pencil"></i> Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.PositionId" class="btn btn-sm btn-secondary" style="background-color: #213d86; border-color: #213d86;"><i class="fa fa-eye"></i> Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.PositionId" class="btn btn-sm btn-danger" style="background-color: #f7941c; border-color: #f7941c;"><i class="fa fa-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

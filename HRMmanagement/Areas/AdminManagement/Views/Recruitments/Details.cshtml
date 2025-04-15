@@ -1,67 +1,57 @@
 ﻿@model HRMmanagement.Models.Recruitment
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Details</h1>
+<h1 style="color: #213d86;"><i class="fas fa-info-circle"></i> Chi tiết Ứng viên</h1>
 
 <div>
-    <h4>Recruitment</h4>
-    <hr />
+    <h4 style="color: #213d86;"><i class="far fa-file-alt"></i> Thông tin Ứng viên</h4>
+    <hr style="border-top: 1px solid #00adef;" />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-id-card"></i> @Html.DisplayNameFor(model => model.FullName)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FullName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-envelope"></i> @Html.DisplayNameFor(model => model.Email)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-phone"></i> @Html.DisplayNameFor(model => model.Phone)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Phone)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cvpath)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-file-pdf"></i> @Html.DisplayNameFor(model => model.Cvpath)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cvpath)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InterviewDate)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-calendar-alt"></i> @Html.DisplayNameFor(model => model.InterviewDate)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.InterviewDate)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-info-circle"></i> @Html.DisplayNameFor(model => model.Status)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class = "col-sm-10">
+        <dt class="col-sm-2" style="color: #213d86;"><i class="far fa-clock"></i> @Html.DisplayNameFor(model => model.CreatedAt)</dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreatedAt)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AppliedPosition)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AppliedPosition.PositionId)
+        <dt class="col-sm-2" style="color: #213d86;"><i class="fas fa-briefcase"></i> @Html.DisplayNameFor(model => model.AppliedPosition)</dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AppliedPosition.PositionName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.CandidateId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.CandidateId" class="btn btn-outline-primary" style="color: #213d86; border-color: #00adef;">
+        <i class="fas fa-edit"></i> Sửa
+    </a>
+    <a asp-action="Index" class="btn btn-outline-secondary" style="color: #213d86; border-color: #6c757d;">
+        <i class="fas fa-arrow-left"></i> Trở về Danh sách
+    </a>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />

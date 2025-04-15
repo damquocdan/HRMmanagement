@@ -1,70 +1,78 @@
 ﻿@model HRMmanagement.Models.Recruitment
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Chỉnh sửa";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Edit</h1>
+<h1 style="color: #213d86;"><i class="fas fa-edit"></i> Chỉnh sửa</h1>
 
-<h4>Recruitment</h4>
-<hr />
+<h4 style="color: #213d86;"><i class="far fa-file-alt"></i> Thông tin Ứng viên</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="border: 1px solid #f7941c; padding: 10px; border-radius: 5px; background-color: #fff3cd; color: #85640a;"></div>
             <input type="hidden" asp-for="CandidateId" />
             <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
+                <label asp-for="FullName" class="control-label" style="color: #213d86;"><i class="fas fa-id-card"></i> Họ và tên</label>
+                <input asp-for="FullName" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Email" class="control-label" style="color: #213d86;"><i class="far fa-envelope"></i> Email</label>
+                <input asp-for="Email" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
+                <label asp-for="Phone" class="control-label" style="color: #213d86;"><i class="fas fa-phone"></i> Điện thoại</label>
+                <input asp-for="Phone" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AppliedPositionId" class="control-label"></label>
-                <select asp-for="AppliedPositionId" class="form-control" asp-items="ViewBag.AppliedPositionId"></select>
+                <label asp-for="AppliedPositionId" class="control-label" style="color: #213d86;"><i class="fas fa-briefcase"></i> Vị trí ứng tuyển</label>
+                <select asp-for="AppliedPositionId" class="form-control" asp-items="ViewBag.AppliedPositionId" style="border: 1px solid #00adef;"></select>
                 <span asp-validation-for="AppliedPositionId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cvpath" class="control-label"></label>
-                <input asp-for="Cvpath" class="form-control" />
+                <label asp-for="Cvpath" class="control-label" style="color: #213d86;"><i class="far fa-file-pdf"></i> CV</label>
+                <input asp-for="Cvpath" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Cvpath" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="InterviewDate" class="control-label"></label>
-                <input asp-for="InterviewDate" class="form-control" />
+                <label asp-for="InterviewDate" class="control-label" style="color: #213d86;"><i class="far fa-calendar-alt"></i> Ngày phỏng vấn</label>
+                <input asp-for="InterviewDate" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="InterviewDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <label asp-for="Status" class="control-label" style="color: #213d86;"><i class="fas fa-info-circle"></i> Trạng thái</label>
+                <input asp-for="Status" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
+                <label asp-for="CreatedAt" class="control-label" style="color: #213d86;"><i class="far fa-clock"></i> Ngày tạo</label>
+                <input asp-for="CreatedAt" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <button type="submit" value="Save" class="btn btn-primary" style="background-color: #00984b; border-color: #00984b;">
+                    <i class="fas fa-save"></i> Lưu
+                </button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color: #213d86;">
+        <i class="fas fa-arrow-left"></i> Trở về Danh sách
+    </a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />

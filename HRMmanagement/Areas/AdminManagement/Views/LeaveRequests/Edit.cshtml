@@ -1,65 +1,67 @@
 ﻿@model HRMmanagement.Models.LeaveRequest
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Sửa Đơn xin nghỉ";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Edit</h1>
+<h1 style="color: #213d86;"><i class="fa fa-pencil-square-o"></i> Sửa Đơn xin nghỉ</h1>
 
-<h4>LeaveRequest</h4>
-<hr />
+<h4 style="color: #213d86;"><i class="fa fa-file-text-o"></i> Thông tin Đơn xin nghỉ</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="border: 1px solid #f7941c; padding: 10px; border-radius: 5px; background-color: #fff;"></div>
             <input type="hidden" asp-for="LeaveId" />
             <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <label asp-for="EmployeeId" class="control-label" style="color: #213d86;"><i class="fa fa-user"></i> Nhân viên</label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId" style="border: 1px solid #00adef;"></select>
                 <span asp-validation-for="EmployeeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LeaveType" class="control-label"></label>
-                <input asp-for="LeaveType" class="form-control" />
+                <label asp-for="LeaveType" class="control-label" style="color: #213d86;"><i class="fa fa-list-alt"></i> Loại nghỉ</label>
+                <input asp-for="LeaveType" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="LeaveType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <label asp-for="StartDate" class="control-label" style="color: #213d86;"><i class="fa fa-calendar-check-o"></i> Ngày bắt đầu</label>
+                <input asp-for="StartDate" class="form-control" type="date" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
+                <label asp-for="EndDate" class="control-label" style="color: #213d86;"><i class="fa fa-calendar-times-o"></i> Ngày kết thúc</label>
+                <input asp-for="EndDate" class="form-control" type="date" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Reason" class="control-label"></label>
-                <input asp-for="Reason" class="form-control" />
+                <label asp-for="Reason" class="control-label" style="color: #213d86;"><i class="fa fa-comment-o"></i> Lý do</label>
+                <input asp-for="Reason" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Reason" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
+                <label asp-for="Status" class="control-label" style="color: #213d86;"><i class="fa fa-flag-o"></i> Trạng thái</label>
+                <input asp-for="Status" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
+                <label asp-for="CreatedAt" class="control-label" style="color: #213d86;"><i class="fa fa-clock-o"></i> Ngày tạo</label>
+                <input asp-for="CreatedAt" class="form-control" type="datetime-local" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <button type="submit" value="Lưu" class="btn btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-save"></i> Lưu</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color: #213d86;"><i class="fa fa-arrow-left"></i> Trở về danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

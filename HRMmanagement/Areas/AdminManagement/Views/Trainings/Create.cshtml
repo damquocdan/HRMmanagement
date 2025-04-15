@@ -1,58 +1,66 @@
 ﻿@model HRMmanagement.Models.Training
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo mới";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Create</h1>
+<h1 style="color: #213d86;"><i class="fas fa-plus-circle"></i> Tạo mới Khóa Đào tạo</h1>
 
-<h4>Training</h4>
-<hr />
+<h4 style="color: #213d86;"><i class="fas fa-chalkboard-teacher"></i> Thông tin Khóa Đào tạo</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="border: 1px solid #f7941c; padding: 10px; border-radius: 5px; background-color: #fff3cd; color: #85640a;"></div>
             <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <select asp-for="EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <label asp-for="EmployeeId" class="control-label" style="color: #213d86;"><i class="fas fa-user"></i> Nhân viên</label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId" style="border: 1px solid #00adef;"></select>
             </div>
             <div class="form-group">
-                <label asp-for="TrainingName" class="control-label"></label>
-                <input asp-for="TrainingName" class="form-control" />
+                <label asp-for="TrainingName" class="control-label" style="color: #213d86;"><i class="fas fa-chalkboard-teacher"></i> Tên Khóa Đào tạo</label>
+                <input asp-for="TrainingName" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="TrainingName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <label asp-for="StartDate" class="control-label" style="color: #213d86;"><i class="far fa-calendar-alt"></i> Ngày Bắt đầu</label>
+                <input asp-for="StartDate" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
+                <label asp-for="EndDate" class="control-label" style="color: #213d86;"><i class="far fa-calendar-check"></i> Ngày Kết thúc</label>
+                <input asp-for="EndDate" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Result" class="control-label"></label>
-                <input asp-for="Result" class="form-control" />
+                <label asp-for="Result" class="control-label" style="color: #213d86;"><i class="fas fa-check-circle"></i> Kết quả</label>
+                <input asp-for="Result" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Result" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Evaluation" class="control-label"></label>
-                <input asp-for="Evaluation" class="form-control" />
+                <label asp-for="Evaluation" class="control-label" style="color: #213d86;"><i class="far fa-comment-dots"></i> Đánh giá</label>
+                <input asp-for="Evaluation" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Evaluation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" value="Tạo" class="btn btn-primary" style="background-color: #00984b; border-color: #00984b;">
+                    <i class="fas fa-save"></i> Lưu
+                </button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color: #213d86;">
+        <i class="fas fa-arrow-left"></i> Trở về Danh sách
+    </a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />

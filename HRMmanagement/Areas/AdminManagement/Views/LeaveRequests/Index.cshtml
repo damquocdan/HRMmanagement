@@ -1,72 +1,183 @@
 ﻿@model IEnumerable<HRMmanagement.Models.LeaveRequest>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Đơn xin nghỉ";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1 style="color: #213d86;"><i class="fa fa-file-text-o"></i> Danh sách Đơn xin nghỉ phép</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+<div class="mb-3">
+    <form id="VEYzI7" class="form-inline">
+        <div class="form-group mr-2">
+            <label for="searchName" class="mr-1">Tên nhân viên:</label>
+            <input type="text" name="searchName" id="searchName" class="form-control" value="@ViewBag.SearchName" />
+        </div>
+        <div class="form-group mr-2">
+            <label for="searchStatus" class="mr-1">Trạng thái:</label>
+            <select name="searchStatus" id="searchStatus" class="form-control">
+                <option value="">Tất cả</option>
+                <option value="Chưa xem" selected="@(ViewBag.SearchStatus == "Chưa xem")">Chưa xem</option>
+                <option value="Đã xem" selected="@(ViewBag.SearchStatus == "Đã xem")">Đã xem</option>
+            </select>
+        </div>
+        <div class="form-group mr-2">
+            <label for="searchStartDate" class="mr-1">Ngày bắt đầu:</label>
+            <input type="date" name="searchStartDate" id="searchStartDate" class="form-control" value="@ViewBag.SearchStartDate" />
+        </div>
+    </form>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead style="background-color: #f8f9fa;">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LeaveType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reason)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee)
-            </th>
-            <th></th>
+            <th style="color: #213d86;"><i class="fa fa-user"></i> @Html.DisplayNameFor(model => model.Employee)</th>
+            <th style="color: #213d86;"><i class="fa fa-list-alt"></i> @Html.DisplayNameFor(model => model.LeaveType)</th>
+            <th style="color: #213d86;"><i class="fa fa-calendar-check-o"></i> @Html.DisplayNameFor(model => model.StartDate)</th>
+            <th style="color: #213d86;"><i class="fa fa-calendar-times-o"></i> @Html.DisplayNameFor(model => model.EndDate)</th>
+            <th style="color: #213d86;"><i class="fa fa-comment-o"></i> @Html.DisplayNameFor(model => model.Reason)</th>
+            <th style="color: #213d86;"><i class="fa fa-flag-o"></i> @Html.DisplayNameFor(model => model.Status)</th>
+            <th style="color: #213d86;"><i class="fa fa-clock-o"></i> @Html.DisplayNameFor(model => model.CreatedAt)</th>
+            <th style="color: #213d86;"><i class="fa fa-cog"></i> Thao tác</th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LeaveType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Reason)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.LeaveId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LeaveId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LeaveId">Delete</a>
-            </td>
-        </tr>
-}
+    <tbody id="leaveTableBody">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaveType)
+                </td>
+                <td>
+                    @item.StartDate?.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @item.EndDate?.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                </td>
+                <td>
+                    <select class="form-control status-select" data-id="@item.LeaveId" onchange="updateStatus(this)">
+                        <option value="Chưa xem" selected="@(item.Status == "Chưa xem")">Chưa xem</option>
+                        <option value="Đã xem" selected="@(item.Status == "Đã xem")">Đã xem</option>
+                    </select>
+                </td>
+                <td>
+                    @item.CreatedAt?.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.LeaveId" class="btn btn-sm btn-secondary" style="background-color: #213d86; border-color: #213d86;"><i class="fa fa-eye"></i> Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.LeaveId" class="btn btn-sm btn-danger" style="background-color: #f7941c; border-color: #f7941c;"><i class="fa fa-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<style>
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .form-inline .form-control {
+        width: auto;
+    }
+
+    .mr-1 {
+        margin-right: 5px;
+    }
+
+    .mr-2 {
+        margin-right: 10px;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Debounce setup to prevent excessive AJAX calls
+            let searchTimeout;
+            $('#searchName').on('input', function () {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(performSearch, 300); // Wait 300ms after typing
+            });
+
+            $('#searchStatus, #searchStartDate').on('change', function () {
+                performSearch();
+            });
+
+            function performSearch() {
+                var searchName = $('#searchName').val();
+                var searchStatus = $('#searchStatus').val();
+                var searchStartDate = $('#searchStartDate').val();
+
+                $.ajax({
+                    url: '@Url.Action("Search", "LeaveRequests", new { area = "AdminManagement" })',
+                    type: 'GET',
+                    data: {
+                        searchName: searchName,
+                        searchStatus: searchStatus,
+                        searchStartDate: searchStartDate
+                    },
+                    success: function (data) {
+                        // Clear existing rows
+                        $('#leaveTableBody').empty();
+
+                        // Build new rows from JSON data
+                        $.each(data, function (index, item) {
+                            var row = '<tr>' +
+                                '<td>' + (item.employee ? item.employee.fullName : '') + '</td>' +
+                                '<td>' + (item.leaveType || '') + '</td>' +
+                                '<td>' + (item.startDate ? new Date(item.startDate).toLocaleDateString('en-GB') : '') + '</td>' +
+                                '<td>' + (item.endDate ? new Date(item.endDate).toLocaleDateString('en-GB') : '') + '</td>' +
+                                '<td>' + (item.reason || '') + '</td>' +
+                                '<td>' +
+                                '<select class="form-control status-select" data-id="' + item.leaveId + '" onchange="updateStatus(this)">' +
+                                '<option value="Chưa xem" ' + (item.status === 'Chưa xem' ? 'selected' : '') + '>Chưa xem</option>' +
+                                '<option value="Đã xem" ' + (item.status === 'Đã xem' ? 'selected' : '') + '>Đã xem</option>' +
+                                '</select>' +
+                                '</td>' +
+                                '<td>' + (item.createdAt ? new Date(item.createdAt).toLocaleDateString('en-GB') : '') + '</td>' +
+                                '<td>' +
+                                '<a href="/AdminManagement/LeaveRequests/Details/' + item.leaveId + '" class="btn btn-sm btn-secondary" style="background-color: #213d86; border-color: #213d86;"><i class="fa fa-eye"></i> Chi tiết</a> ' +
+                                '<a href="/AdminManagement/LeaveRequests/Delete/' + item.leaveId + '" class="btn btn-sm btn-danger" style="background-color: #f7941c; border-color: #f7941c;"><i class="fa fa-trash"></i> Xóa</a>' +
+                                '</td>' +
+                                '</tr>';
+                            $('#leaveTableBody').append(row);
+                        });
+                    },
+                    error: function () {
+                        alert('Đã xảy ra lỗi khi tìm kiếm.');
+                    }
+                });
+            }
+        });
+
+        function updateStatus(selectElement) {
+            var leaveId = $(selectElement).data('id');
+            var newStatus = $(selectElement).val();
+
+            $.ajax({
+                url: '@Url.Action("UpdateStatus", "LeaveRequests", new { area = "AdminManagement" })',
+                type: 'POST',
+                data: { id: leaveId, status: newStatus },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Cập nhật trạng thái thành công!');
+                    } else {
+                        alert('Cập nhật thất bại: ' + response.message);
+                    }
+                },
+                error: function () {
+                    alert('Đã xảy ra lỗi khi cập nhật trạng thái.');
+                }
+            });
+        }
+    </script>
+}

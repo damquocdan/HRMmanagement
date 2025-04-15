@@ -1,78 +1,101 @@
 ﻿@model IEnumerable<HRMmanagement.Models.Recruitment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Ứng viên";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1 style="color: #213d86;"><i class="fas fa-users"></i> Danh sách Ứng viên</h1>
 <table class="table">
-    <thead>
+    <thead style="background-color: #f8f9fa;">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cvpath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InterviewDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AppliedPosition)
-            </th>
+            <th style="color: #213d86;"><i class="fas fa-id-card"></i> @Html.DisplayNameFor(model => model.FullName)</th>
+            <th style="color: #213d86;"><i class="far fa-envelope"></i> @Html.DisplayNameFor(model => model.Email)</th>
+            <th style="color: #213d86;"><i class="fas fa-phone"></i> @Html.DisplayNameFor(model => model.Phone)</th>
+            <th style="color: #213d86;"><i class="far fa-file-pdf"></i> @Html.DisplayNameFor(model => model.Cvpath)</th>
+            <th style="color: #213d86;"><i class="far fa-calendar-alt"></i> @Html.DisplayNameFor(model => model.InterviewDate)</th>
+            <th style="color: #213d86;"><i class="fas fa-info-circle"></i> @Html.DisplayNameFor(model => model.Status)</th>
+            <th style="color: #213d86;"><i class="far fa-clock"></i> @Html.DisplayNameFor(model => model.CreatedAt)</th>
+            <th style="color: #213d86;"><i class="fas fa-briefcase"></i> @Html.DisplayNameFor(model => model.AppliedPosition)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cvpath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InterviewDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AppliedPosition.PositionId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CandidateId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CandidateId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CandidateId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.OrderByDescending(m => m.CreatedAt))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <a href="@item.Cvpath" download class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-download"></i> Tải CV
+                    </a>
+                </td>
+                <td>
+                    @item.InterviewDate?.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <select class="status-select" data-id="@item.CandidateId">
+                        <option value="Chờ xử lý" selected="@(item.Status == "Chờ xử lý")">Chờ xử lý</option>
+                        <option value="Đã duyệt" selected="@(item.Status == "Đã duyệt")">Đã duyệt</option>
+                    </select>
+                </td>
+                <td>
+                    @item.CreatedAt?.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppliedPosition.PositionName)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.CandidateId" class="btn btn-sm btn-outline-info" style="color: #213d86; border-color: #00adef;">
+                        <i class="fas fa-info-circle"></i> Chi tiết
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.CandidateId" class="btn btn-sm btn-outline-danger" style="color: #213d86; border-color: #f7941c;">
+                        <i class="fas fa-trash-alt"></i> Xóa
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@Html.AntiForgeryToken()
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.status-select').change(function () {
+            var candidateId = $(this).data('id');
+            var newStatus = $(this).val();
+
+            $.ajax({
+                url: '@Url.Action("UpdateStatus", "Recruitments", new { area = "AdminManagement" })',
+                type: 'POST',
+                data: {
+                    id: candidateId,
+                    status: newStatus,
+                    __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Cập nhật trạng thái thành công!');
+                    } else {
+                        alert('Có lỗi xảy ra khi cập nhật trạng thái.');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log('AJAX Error:', xhr.status, xhr.responseText, status, error);
+                    alert('Lỗi kết nối đến server. Vui lòng kiểm tra console để biết thêm chi tiết.');
+                }
+            });
+        });
+    });
+</script>

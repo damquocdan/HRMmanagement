@@ -1,72 +1,147 @@
 ﻿@model IEnumerable<HRMmanagement.Models.Attendance>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Chấm công";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1 style="color: #213d86;"><i class="fa fa-calendar-check-o"></i> Danh sách Chấm công</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+<!-- Search and Filter Form -->
+<form id="filterForm" class="mb-3">
+    <div class="row">
+        <!-- Search by Name -->
+        <div class="col-md-2">
+            <label>Tìm kiếm theo tên</label>
+            <input type="text" name="searchName" class="form-control" value="@ViewBag.SearchName" placeholder="Nhập tên nhân viên" />
+        </div>
+        <!-- Filter by Status -->
+        <div class="col-md-2">
+            <label>Lọc theo trạng thái</label>
+            <select name="status" class="form-control">
+                <option value="">Tất cả</option>
+                <option value="Present" selected="@(ViewBag.Status == "Present")">Đầy đủ</option>
+                <option value="Absent" selected="@(ViewBag.Status == "Late")">Muộn</option>
+            </select>
+        </div>
+        <!-- Search by Attendance Date -->
+        <div class="col-md-2">
+            <label>Ngày chấm công</label>
+            <input type="date" name="attendanceDate" class="form-control" value="@ViewBag.AttendanceDate" />
+        </div>
+        <!-- Filter by CreatedAt Range -->
+        <div class="col-md-2">
+            <label>Tạo từ ngày</label>
+            <input type="date" name="createdAtFrom" class="form-control" value="@ViewBag.CreatedAtFrom" />
+        </div>
+        <div class="col-md-2">
+            <label>Đến ngày</label>
+            <input type="date" name="createdAtTo" class="form-control" value="@ViewBag.CreatedAtTo" />
+        </div>
+        <!-- Filter by CreatedAt Month -->
+        <div class="col-md-1">
+            <label>Tháng tạo</label>
+            <select name="createdAtMonth" class="form-control">
+                <option value="">Tất cả</option>
+                @for (int i = 1; i <= 12; i++)
+                {
+                    <option value="@i" selected="@(ViewBag.CreatedAtMonth == i.ToString())">@i</option>
+                }/2025
+            </select>
+        </div>
+        <div class="col-md-1">
+            <label></label>
+            <a href="@Url.Action("Index")" class="btn btn-secondary w-100">
+                <i class="fas fa-sync-alt"></i>
+            </a>
+        </div>
+
+
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <a asp-action="ExportToExcel" class="btn btn-success"><i class="fa fa-file-excel-o"></i> Xuất Excel</a>
+        </div>
+    </div>
+</form>
+
+<!-- Attendance Table -->
+<table class="table table-bordered table-striped">
+    <thead style="background-color: #f8f9fa;">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AttendanceDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CheckInTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CheckOutTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OvertimeHours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Employee)
-            </th>
-            <th></th>
+            <th style="color: #213d86;"><i class="fa fa-user"></i> @Html.DisplayNameFor(model => model.Employee.FullName)</th>
+            <th style="color: #213d86;"><i class="fa fa-calendar"></i> @Html.DisplayNameFor(model => model.AttendanceDate)</th>
+            <th style="color: #213d86;"><i class="fa fa-sign-in"></i> @Html.DisplayNameFor(model => model.CheckInTime)</th>
+            <th style="color: #213d86;"><i class="fa fa-sign-out"></i> @Html.DisplayNameFor(model => model.CheckOutTime)</th>
+            <th style="color: #213d86;"><i class="fa fa-hourglass-half"></i> @Html.DisplayNameFor(model => model.OvertimeHours)</th>
+            <th style="color: #213d86;"><i class="fa fa-check-circle-o"></i> @Html.DisplayNameFor(model => model.Status)</th>
+            <th style="color: #213d86;"><i class="fa fa-clock-o"></i> @Html.DisplayNameFor(model => model.CreatedAt)</th>
+            <th style="color: #213d86;"><i class="fa fa-cog"></i> Thao tác</th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AttendanceDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CheckInTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CheckOutTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OvertimeHours)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AttendanceId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AttendanceId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AttendanceId">Delete</a>
-            </td>
-        </tr>
-}
+    <tbody id="attendanceTableBody">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(item.Employee?.FullName ?? "N/A")</td>
+                <td>@(item.AttendanceDate.HasValue ? item.AttendanceDate.Value.ToString("dd/MM/yyyy") : "")</td>
+                <td>@(item.CheckInTime.HasValue ? item.CheckInTime.Value.ToString("HH:mm") : "")</td>
+                <td>@(item.CheckOutTime.HasValue ? item.CheckOutTime.Value.ToString("HH:mm") : "")</td>
+                <td>@(item.OvertimeHours.HasValue ? item.OvertimeHours.Value.ToString("F2") : "")</td>
+                <td>
+                    @(item.Status == "Present" ? "Đầy đủ" :
+                        item.Status == "Late" ? "Muộn" : "")
+                </td>
+
+                <td>@(item.CreatedAt.HasValue ? item.CreatedAt.Value.ToString("dd/MM/yyyy HH:mm") : "")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.AttendanceId" class="btn btn-sm btn-secondary" style="background-color: #213d86; border-color: #213d86;"><i class="fa fa-eye"></i> Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.AttendanceId" class="btn btn-sm btn-danger" style="background-color: #f7941c; border-color: #f7941c;"><i class="fa fa-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Debounce function to limit AJAX calls
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+
+            // Function to load table data
+            function loadTableData() {
+                var formData = $('#filterForm').serialize();
+                $.ajax({
+                    url: '@Url.Action("GetFilteredAttendances", "Attendances", new { area = "AdminManagement" })',
+                    type: 'GET',
+                    data: formData,
+                    success: function (result) {
+                        $('#attendanceTableBody').html(result);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error loading data:', error);
+                    }
+                });
+            }
+
+            // Attach event listeners with debounce
+            const debouncedLoadTableData = debounce(loadTableData, 300);
+
+            // Trigger on input change or selection
+            $('#filterForm input, #filterForm select').on('input change', function () {
+                debouncedLoadTableData();
+            });
+        });
+    </script>
+}

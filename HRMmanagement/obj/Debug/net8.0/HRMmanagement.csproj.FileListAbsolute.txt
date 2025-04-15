@@ -266,3 +266,11 @@ E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\Mic
 E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\package-lock.json
 E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\package.json
 E:\DATN\HRMmanagement\HRMmanagement\obj\Debug\net8.0\HRMmanagement.sourcelink.json
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\ClosedXML.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\ClosedXML.Parser.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\ExcelNumberFormat.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\RBush.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\SixLabors.Fonts.dll
+E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\System.IO.Packaging.dll

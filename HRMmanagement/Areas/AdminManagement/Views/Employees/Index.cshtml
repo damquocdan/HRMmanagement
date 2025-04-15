@@ -1,57 +1,27 @@
 ﻿@model IEnumerable<HRMmanagement.Models.Employee>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quản Lý Nhân Viên";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Index</h1>
+<h1 style="color: #213d86;"><i class="fas fa-users"></i> Quản Lý Nhân Viên</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary" style="background-color: #00adef; border-color: #00adef;">
+        <i class="fas fa-plus"></i> Thêm Mới
+    </a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BaseSalary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ContractStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ContractEndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QrcodeData)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Position)
-            </th>
+    <thead style="background-color: #f8f9fa;">
+        <tr style="color: #213d86;">
+            <th> @Html.DisplayNameFor(model => model.FullName)</th>
+            <th><i class="fas fa-id-card"></i>Thông tin</th>
+            <th><i class="fas fa-money-bill-wave"></i> @Html.DisplayNameFor(model => model.BaseSalary)</th>
+            <th><i class="fas fa-calendar-check"></i> @Html.DisplayNameFor(model => model.ContractStartDate)</th>
+            <th><i class="fas fa-calendar-times"></i> @Html.DisplayNameFor(model => model.ContractEndDate)</th>
+            <th><i class="fas fa-calendar-alt"></i> @Html.DisplayNameFor(model => model.CreatedAt)</th>
+            <th><i class="fas fa-qrcode"></i> @Html.DisplayNameFor(model => model.QrcodeData)</th>
             <th></th>
         </tr>
     </thead>
@@ -59,58 +29,44 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
+                    <i class="fas fa-birthday-cake"></i>: @Html.DisplayFor(modelItem => item.DateOfBirth)<br />
+                    <i class="fas fa-venus-mars"></i>: @Html.DisplayFor(modelItem => item.Gender)<br />
+                    <i class="fas fa-map-marker-alt"></i>: @Html.DisplayFor(modelItem => item.Address)<br />
+                    <i class="fas fa-phone"></i>: @Html.DisplayFor(modelItem => item.Phone)<br />
+                    <i class="fas fa-envelope"></i>: @Html.DisplayFor(modelItem => item.Email)<br />
+                    @Html.DisplayNameFor(model => model.Position.PositionName): @Html.DisplayFor(modelItem => item.Position.PositionName)<br />
+                    @Html.DisplayNameFor(model => model.Department.DepartmentName): @Html.DisplayFor(modelItem => item.Department.DepartmentName)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BaseSalary)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractStartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractEndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedAt)
-                </td>
+                <td>@Html.DisplayFor(modelItem => item.BaseSalary)</td>
+                <td>@Html.DisplayFor(modelItem => item.ContractStartDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.ContractEndDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
                 <td>
                     @if (!string.IsNullOrEmpty(item.QrcodeData))
                     {
-                        <img src="@item.QrcodeData" alt="QR Code" style="max-width:100px; max-height:100px;" />
+                        <img src="@item.QrcodeData" alt="Mã QR" style="max-width:50px; max-height:50px;" />
                     }
                     else
                     {
-                        <span>No QR Code</span>
+                        <span>Không có mã QR</span>
                     }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Department.DepartmentId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Position.PositionId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="btn btn-sm btn-outline-primary" style="color: #213d86; border-color: #00adef;">
+                        <i class="fas fa-edit"></i> Sửa
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.EmployeeId" class="btn btn-sm btn-outline-info" style="color: #213d86; border-color: #00adef;">
+                        <i class="fas fa-info-circle"></i> Chi Tiết
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="btn btn-sm btn-outline-danger" style="color: #213d86; border-color: #f7941c;">
+                        <i class="fas fa-trash-alt"></i> Xóa
+                    </a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

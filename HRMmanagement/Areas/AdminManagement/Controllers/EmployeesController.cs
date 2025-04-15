@@ -25,6 +25,8 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
         public async Task<IActionResult> Index()
         {
             var hrmanagementContext = _context.Employees.Include(e => e.Department).Include(e => e.Position);
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName");
+            ViewData["PositionId"] = new SelectList(_context.Positions, "PositionId", "PositionName");
             return View(await hrmanagementContext.ToListAsync());
         }
 

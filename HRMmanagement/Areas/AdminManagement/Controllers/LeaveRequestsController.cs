@@ -20,10 +20,88 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
         }
 
         // GET: AdminManagement/LeaveRequests
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchName, string searchStatus, DateOnly? searchStartDate)
         {
-            var hrmanagementContext = _context.LeaveRequests.Include(l => l.Employee);
+            var hrmanagementContext = _context.LeaveRequests
+                .Include(l => l.Employee)
+                .AsQueryable();
+
+            // Search by employee name
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                hrmanagementContext = hrmanagementContext
+                    .Where(l => l.Employee.FullName.Contains(searchName));
+                ViewBag.SearchName = searchName;
+            }
+
+            // Search by status
+            if (!string.IsNullOrEmpty(searchStatus))
+            {
+                hrmanagementContext = hrmanagementContext
+                    .Where(l => l.Status == searchStatus);
+                ViewBag.SearchStatus = searchStatus;
+            }
+
+            // Search by start date
+            if (searchStartDate.HasValue)
+            {
+                hrmanagementContext = hrmanagementContext
+                    .Where(l => l.StartDate == searchStartDate.Value);
+                ViewBag.SearchStartDate = searchStartDate.Value.ToString("yyyy-MM-dd");
+            }
+
+            // Sort by CreatedAt descending
+            hrmanagementContext = hrmanagementContext.OrderByDescending(l => l.CreatedAt);
+
             return View(await hrmanagementContext.ToListAsync());
+        }
+
+        // GET: AdminManagement/LeaveRequests/Search
+        public async Task<IActionResult> Search(string searchName, string searchStatus, DateOnly? searchStartDate)
+        {
+            var hrmanagementContext = _context.LeaveRequests
+                .Include(l => l.Employee)
+                .AsQueryable();
+
+            // Search by employee name
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                hrmanagementContext = hrmanagementContext
+                    .Where(l => l.Employee.FullName.Contains(searchName));
+            }
+
+            // Search by status
+            if (!string.IsNullOrEmpty(searchStatus))
+            {
+                hrmanagementContext = hrmanagementContext
+                    .Where(l => l.Status == searchStatus);
+            }
+
+            // Search by start date
+            if (searchStartDate.HasValue)
+            {
+                hrmanagementContext = hrmanagementContext
+                    .Where(l => l.StartDate == searchStartDate.Value);
+            }
+
+            // Sort by CreatedAt descending
+            hrmanagementContext = hrmanagementContext.OrderByDescending(l => l.CreatedAt);
+
+            var results = await hrmanagementContext
+                .Select(l => new
+                {
+                    l.LeaveId,
+                    Employee = new { l.Employee.FullName },
+                    l.LeaveType,
+                    l.StartDate,
+                    l.EndDate,
+                    l.Reason,
+                    l.Status,
+                    l.CreatedAt
+                })
+                .ToListAsync();
+
+            return Json(results);
         }
 
         // GET: AdminManagement/LeaveRequests/Details/5
@@ -53,8 +131,6 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
         }
 
         // POST: AdminManagement/LeaveRequests/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("LeaveId,EmployeeId,LeaveType,StartDate,EndDate,Reason,Status,CreatedAt")] LeaveRequest leaveRequest)
@@ -87,8 +163,6 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
         }
 
         // POST: AdminManagement/LeaveRequests/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("LeaveId,EmployeeId,LeaveType,StartDate,EndDate,Reason,Status,CreatedAt")] LeaveRequest leaveRequest)
@@ -154,6 +228,28 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        // POST: AdminManagement/LeaveRequests/UpdateStatus
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatus(int id, string status)
+        {
+            var leaveRequest = await _context.LeaveRequests.FindAsync(id);
+            if (leaveRequest == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy đơn xin nghỉ." });
+            }
+
+            leaveRequest.Status = status;
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
         }
 
         private bool LeaveRequestExists(int id)

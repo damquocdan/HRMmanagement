@@ -1,94 +1,92 @@
 ﻿@model HRMmanagement.Models.Employee
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo mới";
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Create</h1>
+<h1 style="color: #213d86;"><i class="fa fa-plus-circle"></i> Tạo mới Nhân viên</h1>
 
-<h4>Employee</h4>
-<hr />
+<h4 style="color: #213d86;"><i class="fa fa-user-plus"></i> Thông tin Nhân viên</h4>
+<hr style="border-top: 1px solid #00adef;" />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="border: 1px solid #f7941c; padding: 10px; border-radius: 5px; background-color: #fff;"></div>
 
             <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
+                <label asp-for="FullName" class="control-label" style="color: #213d86;"><i class="fa fa-id-card-o"></i> Họ và tên</label>
+                <input asp-for="FullName" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="DateOfBirth" class="control-label"></label>
-                <input asp-for="DateOfBirth" class="form-control" type="date" />
+                <label asp-for="DateOfBirth" class="control-label" style="color: #213d86;"><i class="fa fa-calendar"></i> Ngày sinh</label>
+                <input asp-for="DateOfBirth" class="form-control" type="date" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
+                <label asp-for="Gender" class="control-label" style="color: #213d86;"><i class="fa fa-venus-mars"></i> Giới tính</label>
+                <input asp-for="Gender" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+                <label asp-for="Address" class="control-label" style="color: #213d86;"><i class="fa fa-map-marker"></i> Địa chỉ</label>
+                <input asp-for="Address" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
+                <label asp-for="Phone" class="control-label" style="color: #213d86;"><i class="fa fa-phone"></i> Điện thoại</label>
+                <input asp-for="Phone" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Email" class="control-label" style="color: #213d86;"><i class="fa fa-envelope"></i> Email</label>
+                <input asp-for="Email" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="DepartmentId" class="control-label"></label>
-                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId"></select>
+                <label asp-for="DepartmentId" class="control-label" style="color: #213d86;"><i class="fa fa-building-o"></i> Phòng ban</label>
+                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId" style="border: 1px solid #00adef;"></select>
             </div>
 
             <div class="form-group">
-                <label asp-for="PositionId" class="control-label"></label>
-                <select asp-for="PositionId" class="form-control" asp-items="ViewBag.PositionId"></select>
+                <label asp-for="PositionId" class="control-label" style="color: #213d86;"><i class="fa fa-briefcase"></i> Vị trí</label>
+                <select asp-for="PositionId" class="form-control" asp-items="ViewBag.PositionId" style="border: 1px solid #00adef;"></select>
             </div>
 
             <div class="form-group">
-                <label asp-for="BaseSalary" class="control-label"></label>
-                <input asp-for="BaseSalary" class="form-control" />
+                <label asp-for="BaseSalary" class="control-label" style="color: #213d86;"><i class="fa fa-money"></i> Lương cơ bản</label>
+                <input asp-for="BaseSalary" class="form-control" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="BaseSalary" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ContractStartDate" class="control-label"></label>
-                <input asp-for="ContractStartDate" class="form-control" type="date" />
+                <label asp-for="ContractStartDate" class="control-label" style="color: #213d86;"><i class="fa fa-file-text-o"></i> Ngày bắt đầu HĐ</label>
+                <input asp-for="ContractStartDate" class="form-control" type="date" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="ContractStartDate" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ContractEndDate" class="control-label"></label>
-                <input asp-for="ContractEndDate" class="form-control" type="date" />
+                <label asp-for="ContractEndDate" class="control-label" style="color: #213d86;"><i class="fa fa-file-text"></i> Ngày kết thúc HĐ</label>
+                <input asp-for="ContractEndDate" class="form-control" type="date" style="border: 1px solid #00adef;" />
                 <span asp-validation-for="ContractEndDate" class="text-danger"></span>
             </div>
 
-            <!-- QR Code field is generated automatically in the backend, so we remove it -->
-
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" class="btn btn-primary" style="background-color: #00adef; border-color: #00adef;"><i class="fa fa-save"></i> Tạo mới</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color: #213d86;"><i class="fa fa-arrow-left"></i> Trở về danh sách</a>
 </div>
 
 @section Scripts {
