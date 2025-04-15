@@ -3,172 +3,40 @@
   "WorkspaceRootPath": "E:\\DATN\\HRMmanagement\\HRMmanagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\views\\attendances\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:views\\attendances\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\views\\recruitments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:views\\recruitments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\attendances\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\attendances\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\recruitment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\recruitment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\controllers\\attendancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:controllers\\attendancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\leaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\views\\leaverequests\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:views\\leaverequests\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\controllers\\recruitmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:controllers\\recruitmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\controllers\\attendancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:controllers\\attendancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\employees\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\employees\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\hrmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\hrmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\shared\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\shared\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\trainingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\trainingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\recruitmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\recruitmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\positionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\positionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\performanceevaluationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\performanceevaluationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\payrollscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\payrollscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\leaverequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\attendancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\attendancescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\models\\training.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:models\\training.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\shared\\_preloader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\shared\\_preloader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\areas\\adminmanagement\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:areas\\adminmanagement\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|e:\\datn\\hrmmanagement\\hrmmanagement\\views\\attendances\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AC91FEEE-E061-4096-AB87-8E90557765FB}|HRMmanagement.csproj|solutionrelative:views\\attendances\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -199,507 +67,119 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Attendances\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Attendances\\Create.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Attendances\\Create.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Attendances\\Create.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T06:57:43.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\LeaveRequests\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\LeaveRequests\\Create.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\LeaveRequests\\Create.cshtml",
-              "RelativeToolTip": "Views\\LeaveRequests\\Create.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAADwvzAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T06:33:35.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T06:31:10.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Department.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Department.cs",
-              "RelativeDocumentMoniker": "Models\\Department.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Department.cs",
-              "RelativeToolTip": "Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Title": "Recruitment.cs",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Recruitment.cs",
+              "RelativeDocumentMoniker": "Models\\Recruitment.cs",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Recruitment.cs",
+              "RelativeToolTip": "Models\\Recruitment.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA4wBkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T04:29:28.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Employees\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Employees\\Create.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Employees\\Create.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Employees\\Create.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T04:21:49.157Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Attendances\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Attendances\\Create.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Attendances\\Create.cshtml",
-              "RelativeToolTip": "Views\\Attendances\\Create.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAGsAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T04:21:17.955Z",
+              "WhenOpened": "2025-04-15T01:38:44.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "LeaveRequest.cs",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\LeaveRequest.cs",
+              "RelativeDocumentMoniker": "Models\\LeaveRequest.cs",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\LeaveRequest.cs",
+              "RelativeToolTip": "Models\\LeaveRequest.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwDIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T01:34:53.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AttendancesController.cs",
               "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\AttendancesController.cs",
               "RelativeDocumentMoniker": "Controllers\\AttendancesController.cs",
               "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\AttendancesController.cs",
               "RelativeToolTip": "Controllers\\AttendancesController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAIwGMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAswGIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T04:16:05.02Z"
+              "WhenOpened": "2025-04-14T07:36:20.825Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "LeaveRequestsController.cs",
               "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\LeaveRequestsController.cs",
               "RelativeDocumentMoniker": "Controllers\\LeaveRequestsController.cs",
               "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\LeaveRequestsController.cs",
               "RelativeToolTip": "Controllers\\LeaveRequestsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAADwv0wAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T04:16:47.878Z"
+              "WhenOpened": "2025-04-14T07:34:42.54Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeesController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\EmployeesController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\EmployeesController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\EmployeesController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\EmployeesController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAADwv28AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RecruitmentsController.cs",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\RecruitmentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecruitmentsController.cs",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\RecruitmentsController.cs",
+              "RelativeToolTip": "Controllers\\RecruitmentsController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAcwFIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T04:14:01.726Z"
+              "WhenOpened": "2025-04-14T07:27:30.628Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Attendance.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Attendance.cs",
-              "RelativeDocumentMoniker": "Models\\Attendance.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Attendance.cs",
-              "RelativeToolTip": "Models\\Attendance.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:37:54.884Z"
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Recruitments\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Recruitments\\Create.cshtml",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Recruitments\\Create.cshtml",
+              "RelativeToolTip": "Views\\Recruitments\\Create.cshtml",
+              "ViewState": "AgIAAKUAAAAAAAAAAADwv60AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T07:23:41.208Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "Models\\Employee.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Employee.cs",
-              "RelativeToolTip": "Models\\Employee.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:37:58.983Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Position.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Position.cs",
-              "RelativeDocumentMoniker": "Models\\Position.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Position.cs",
-              "RelativeToolTip": "Models\\Position.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T04:29:36.516Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Employees\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Employees\\Index.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Employees\\Index.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Employees\\Index.cshtml",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAmwHQAAAAAAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T04:30:19.522Z"
+              "WhenOpened": "2025-04-14T07:23:13.549Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T04:03:33.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TrainingsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\TrainingsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\TrainingsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\TrainingsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\TrainingsController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:48:55.943Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "RecruitmentsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\RecruitmentsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\RecruitmentsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\RecruitmentsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\RecruitmentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:48:22.235Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PositionsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\PositionsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\PositionsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\PositionsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\PositionsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:47:24.609Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "PerformanceEvaluationsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\PerformanceEvaluationsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\PerformanceEvaluationsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\PerformanceEvaluationsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\PerformanceEvaluationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:46:48.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PayrollsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\PayrollsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\PayrollsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\PayrollsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\PayrollsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:46:11.003Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "LeaveRequestsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\LeaveRequestsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\LeaveRequestsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\LeaveRequestsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\LeaveRequestsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:45:34.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "DepartmentsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\DepartmentsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\DepartmentsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\DepartmentsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\DepartmentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:44:11.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AttendancesController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\AttendancesController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\AttendancesController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\AttendancesController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AttendancesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:43:40.291Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "AdminsController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\AdminsController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\AdminsController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\AdminsController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\AdminsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:43:03.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Training.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Training.cs",
-              "RelativeDocumentMoniker": "Models\\Training.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Training.cs",
-              "RelativeToolTip": "Models\\Training.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:37:46.741Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "Models\\Admin.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\Admin.cs",
-              "RelativeToolTip": "Models\\Admin.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:34:57.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Login\\Index.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAAAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Attendances\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Attendances\\Create.cshtml",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\Attendances\\Create.cshtml",
+              "RelativeToolTip": "Views\\Attendances\\Create.cshtml",
+              "ViewState": "AgIAAJ0AAAAAAAAAAADwv7YAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:34:17.781Z"
+              "WhenOpened": "2025-04-14T07:17:56.775Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\LeaveRequests\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\LeaveRequests\\Create.cshtml",
+              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Views\\LeaveRequests\\Create.cshtml",
+              "RelativeToolTip": "Views\\LeaveRequests\\Create.cshtml",
+              "ViewState": "AgIAADMBAAAAAAAAAADwv0wBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:34:07.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-14T03:32:31.86Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:32:29.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\_ViewImports.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:22.794Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\_ViewStart.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:21.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "_NavBar.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_NavBar.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Shared\\_NavBar.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_NavBar.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Shared\\_NavBar.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:18.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "_Preloader.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_Preloader.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Shared\\_Preloader.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_Preloader.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Shared\\_Preloader.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:15.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "_SideBar.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_SideBar.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Shared\\_SideBar.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_SideBar.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Shared\\_SideBar.cshtml",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAADkBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:14.704Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Admin.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\Admin.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Shared\\Admin.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\Admin.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Shared\\Admin.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACAAAAAPAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:13.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "Areas\\AdminManagement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T03:31:11.526Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Login.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Models\\Login.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Models\\Login.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Models\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:30:42.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\LoginController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:29:42.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\DashboardController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:28:24.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "Areas\\AdminManagement\\Controllers\\BaseController.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Areas\\AdminManagement\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "Areas\\AdminManagement\\Controllers\\BaseController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:27:30.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ScaffoldingReadMe.txt",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\ScaffoldingReadMe.txt",
-              "RelativeDocumentMoniker": "ScaffoldingReadMe.txt",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\ScaffoldingReadMe.txt",
-              "RelativeToolTip": "ScaffoldingReadMe.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-14T03:25:54.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HrmanagementContext.cs",
-              "DocumentMoniker": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\HrmanagementContext.cs",
-              "RelativeDocumentMoniker": "Models\\HrmanagementContext.cs",
-              "ToolTip": "E:\\DATN\\HRMmanagement\\HRMmanagement\\Models\\HrmanagementContext.cs",
-              "RelativeToolTip": "Models\\HrmanagementContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T03:22:57.534Z"
+              "WhenOpened": "2025-04-14T07:17:28.772Z",
+              "EditorCaption": ""
             }
           ]
         }

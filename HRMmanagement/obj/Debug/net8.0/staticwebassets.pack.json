@@ -301,6 +301,10 @@
       "PackagePath": "staticwebassets\\images\\QRCodes\\qr_3.png"
     },
     {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
       "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -531,6 +535,14 @@
     {
       "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\uploads\\cv\\21111064572_Đàm Quốc Dân.docx",
+      "PackagePath": "staticwebassets\\uploads\\cv\\21111064572_Đàm Quốc Dân.docx"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\uploads\\cv\\DamQuocDan21111064572BCTD.pdf",
+      "PackagePath": "staticwebassets\\uploads\\cv\\DamQuocDan21111064572BCTD.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HRMmanagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

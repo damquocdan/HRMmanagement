@@ -47,7 +47,7 @@ namespace HRMmanagement.Controllers
         // GET: Recruitments/Create
         public IActionResult Create()
         {
-            ViewData["AppliedPositionId"] = new SelectList(_context.Positions, "PositionId", "PositionId");
+            ViewData["AppliedPositionId"] = new SelectList(_context.Positions, "PositionId", "PositionName");
             return View();
         }
 
@@ -79,12 +79,20 @@ namespace HRMmanagement.Controllers
 
                 _context.Add(recruitment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                TempData["SuccessMessage"] = "Ứng viên đã được thêm thành công!";
+                ModelState.Clear(); // Reset form
+
+                // Trả về form rỗng
+                ViewData["AppliedPositionId"] = new SelectList(_context.Positions, "PositionId", "PositionName");
+                return View();
             }
 
+            // Nếu có lỗi thì giữ nguyên dữ liệu nhập lại
             ViewData["AppliedPositionId"] = new SelectList(_context.Positions, "PositionId", "PositionName", recruitment.AppliedPositionId);
             return View(recruitment);
         }
+
 
 
         // GET: Recruitments/Edit/5

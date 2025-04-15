@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="Areas\AdminManagement\Data\" />
     <Folder Include="wwwroot\images\QRCodes\" />
+    <Folder Include="wwwroot\uploads\cv\" />
   </ItemGroup>
 
 </Project>

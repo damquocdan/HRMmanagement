@@ -65,7 +65,7 @@ namespace HRMmanagement.Controllers
                     CreatedAt = DateTime.UtcNow
                 };
                 _context.Add(newAttendance);
-                TempData["Success"] = $"Check-in recorded for {employee.FullName} (ID: {employee.EmployeeId}).";
+                TempData["Success"] = $"Chấm công vào cho {employee.FullName} (ID: {employee.EmployeeId}).";
             }
             else if (existingAttendance.CheckOutTime == null)
             {
@@ -78,11 +78,11 @@ namespace HRMmanagement.Controllers
                 }
 
                 _context.Update(existingAttendance);
-                TempData["Success"] = $"Check-out recorded for {employee.FullName} (ID: {employee.EmployeeId}).";
+                TempData["Success"] = $"Chấm công ra cho {employee.FullName} (ID: {employee.EmployeeId}).";
             }
             else
             {
-                TempData["Error"] = "Attendance for today is already complete.";
+                TempData["Error"] = "Việc chấm công hôm nay đã hoàn tất.";
                 return RedirectToAction(nameof(Create));
             }
 

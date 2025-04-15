@@ -1,49 +1,131 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HRMmanagement</title>
+    <title>@ViewData["Title"] - HRM Thành Công</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HRMmanagement.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #213d86 !important;
+            font-size: 2rem;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            height: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer {
+            background-color: #e0e0e0;
+        }
+
+        .nav-link {
+            color: #213d86 !important;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+            .nav-link:hover {
+                color: #00adef !important;
+            }
+
+        .logo {
+            height: 108px;
+            margin-right: 15px;
+        }
+
+        /* Alert thông báo */
+        .alert-success {
+            background-color: #00984b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .alert-danger {
+            background-color: #f7941c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive design */
+        @@media (max-width: 768px) {
+            .navbar {
+                height: 100px;
+            }
+
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                height: 40px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HRMmanagement</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" class="logo" alt="logo" />
+                    HRM Thành Công
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Attendances" asp-action="Index">Chấm công</a>
+                            <a class="nav-link" asp-controller="Attendances" asp-action="Create">📋 Chấm công</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LeaveRequests" asp-action="Index">Xin nghỉ phép</a>
+                            <a class="nav-link" asp-controller="LeaveRequests" asp-action="Create">📝 Xin nghỉ phép</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Recruitments" asp-action="Create">Tuyển dụng</a>
+                            <a class="nav-link" asp-controller="Recruitments" asp-action="Create">🧾 Tuyển dụng</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="container mt-4">
+        <main role="main" class="pb-4">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - HRMmanagement - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer border-top text-muted py-3">
+        <div class="container text-center">
+            © 2025 - Hệ thống quản lý nhân sự - Nhà máy giày Thành Công
+            <a asp-controller="Home" asp-action="Privacy">Chính sách bảo mật</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

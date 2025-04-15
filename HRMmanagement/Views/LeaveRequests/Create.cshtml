@@ -4,14 +4,174 @@
     ViewData["Title"] = "Create Leave Request";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    h1 {
+        color: #213d86;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 10px;
+    }
 
-<h1>Create Leave Request</h1>
-<h4>Scan QR Code or Enter Manually</h4>
+    /* Tiêu đề phụ */
+    h4 {
+        color: #00adef;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Đường phân cách */
+    hr {
+        border-top: 2px solid #f7941c;
+        margin: 20px 0;
+    }
+
+    /* Alert thông báo */
+    .alert-success {
+        background-color: #00984b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .alert-danger {
+        background-color: #f7941c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Form group */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            color: #213d86;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+    .form-control {
+        border: 1px solid #00adef;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #00984b;
+            box-shadow: 0 0 5px rgba(0, 152, 75, 0.3);
+            outline: none;
+        }
+
+    /* Nút bấm */
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+        background-color: #00adef;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0091c8;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        background-color: #213d86;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #1a2f6b;
+            transform: translateY(-2px);
+        }
+
+    .btn-success {
+        background-color: #00984b;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #007a3c;
+            transform: translateY(-2px);
+        }
+
+    .btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+
+    /* Video webcam */
+    #webcam {
+        border: 2px solid #f7941c;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Kết quả quét */
+    #result {
+        background-color: #e6f3fa;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #00adef;
+    }
+
+        #result label {
+            color: #213d86;
+            font-weight: 600;
+        }
+
+    #scanResult {
+        color: #00984b;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    /* Validation errors */
+    .text-danger {
+        font-size: 14px;
+        color: #f7941c;
+    }
+
+    /* Responsive design */
+    @@media (max-width: 768px) {
+        .col-md-6
+
+    {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    }
+</style>
+<h1>Tạo Yêu Cầu Nghỉ Phép</h1>
+<h4>Quét Mã QR hoặc Nhập Thủ Công</h4>
 <hr />
 
-@if (TempData["Success"] != null)
+@if (TempData["SuccessMessage"] != null)
 {
-    <div class="alert alert-success">@TempData["Success"]</div>
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
 }
 
 @if (TempData["Error"] != null)
@@ -22,60 +182,59 @@
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
-            <label>Webcam Feed</label>
+            <label>Hình Ảnh Từ Webcam</label>
             <video id="webcam" autoplay playsinline width="100%"></video>
             <canvas id="canvas" style="display:none;"></canvas>
         </div>
         <div class="form-group">
-            <button id="startScan" class="btn btn-primary">Start Scanning</button>
-            <button id="stopScan" class="btn btn-secondary" disabled>Stop Scanning</button>
+            <button id="startScan" class="btn btn-primary">Bắt Đầu Quét</button>
+            <button id="stopScan" class="btn btn-secondary" disabled>Dừng Quét</button>
         </div>
         <div id="result" class="form-group">
-            <label>Scan Result:</label>
-            <p id="scanResult">Waiting for scan...</p>
+            <label>Kết Quả Quét:</label>
+            <p id="scanResult">Đang chờ quét...</p>
         </div>
+
+    </div>
+    <div class="col-md-6">
         <form id="leaveRequestForm" asp-action="Create" method="post">
             @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
+                <label asp-for="EmployeeId" class="control-label">Mã Nhân Viên</label>
                 <input asp-for="EmployeeId" class="form-control" id="employeeId" readonly />
                 <span asp-validation-for="EmployeeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LeaveType" class="control-label"></label>
+                <label asp-for="LeaveType" class="control-label">Loại Nghỉ Phép</label>
                 <input asp-for="LeaveType" class="form-control" />
                 <span asp-validation-for="LeaveType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" type="date" />
+                <label asp-for="StartDate" class="control-label">Ngày Bắt Đầu</label>
+                <input asp-for="StartDate" class="form-control" type="date" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" type="date" />
+                <label asp-for="EndDate" class="control-label">Ngày Kết Thúc</label>
+                <input asp-for="EndDate" class="form-control" type="date" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Reason" class="control-label"></label>
+                <label asp-for="Reason" class="control-label">Lý Do</label>
                 <input asp-for="Reason" class="form-control" />
                 <span asp-validation-for="Reason" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
+                <label asp-for="Status" class="control-label">Trạng Thái</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit Leave Request" class="btn btn-success" id="submitLeaveRequest" disabled />
+                <input type="submit" value="Gửi Yêu Cầu Nghỉ Phép" class="btn btn-success" id="submitLeaveRequest" disabled />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
@@ -84,6 +243,7 @@
     }
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     <script>
+        // Giữ nguyên mã JavaScript của bạn
         const video = document.getElementById("webcam");
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
@@ -109,7 +269,7 @@
                     scanQRCode();
                 };
             } catch (err) {
-                scanResult.textContent = `Error accessing webcam: ${err.message}`;
+                scanResult.textContent = `Lỗi truy cập webcam: ${err.message}`;
                 console.error(err);
             }
         });
@@ -122,7 +282,7 @@
             video.srcObject = null;
             startScanBtn.disabled = false;
             stopScanBtn.disabled = true;
-            scanResult.textContent = "Waiting for scan...";
+            scanResult.textContent = "Đang chờ quét...";
             submitLeaveRequestBtn.disabled = true;
             employeeIdInput.value = "";
             isScanning = false;
@@ -149,15 +309,15 @@
                     const match = code.data.match(/EmployeeID:\s*(\d+)/);
                     if (match && match[1]) {
                         const employeeId = match[1];
-                        scanResult.textContent = `Employee ID: ${employeeId}`;
+                        scanResult.textContent = `Mã Nhân Viên: ${employeeId}`;
                         employeeIdInput.value = employeeId;
                         submitLeaveRequestBtn.disabled = false;
                     } else {
-                        scanResult.textContent = "Invalid QR code format.";
+                        scanResult.textContent = "Định dạng mã QR không hợp lệ.";
                     }
                 }
             } catch (err) {
-                scanResult.textContent = `Error scanning QR code: ${err.message}`;
+                scanResult.textContent = `Lỗi quét mã QR: ${err.message}`;
                 console.error(err);
             }
 
@@ -165,7 +325,7 @@
         }
 
         document.getElementById("leaveRequestForm").addEventListener("submit", (e) => {
-            if (!confirm("Confirm leave request submission for Employee ID: " + employeeIdInput.value + "?")) {
+            if (!confirm("Xác nhận gửi yêu cầu nghỉ phép cho Mã Nhân Viên: " + employeeIdInput.value + "?")) {
                 e.preventDefault();
             }
         });

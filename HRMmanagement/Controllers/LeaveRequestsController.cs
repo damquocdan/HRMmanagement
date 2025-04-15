@@ -62,11 +62,22 @@ namespace HRMmanagement.Controllers
             {
                 _context.Add(leaveRequest);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                TempData["SuccessMessage"] = "Đơn xin nghỉ phép thêm thành công!";
+                ModelState.Clear(); // Xóa dữ liệu cũ khỏi form
+
+                // Gán lại danh sách dropdown vì sau khi Clear thì ViewData mất
+                ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "EmployeeId");
+
+                return View(); // Trả về lại trang Create với form rỗng
             }
+
+            // Nếu có lỗi thì vẫn giữ lại dữ liệu và ViewData
             ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "EmployeeId", leaveRequest.EmployeeId);
+            TempData["SuccessMessage"] = "Đơn xin nghỉ phép thêm thành công!";
             return View(leaveRequest);
         }
+
 
         // GET: LeaveRequests/Edit/5
         public async Task<IActionResult> Edit(int? id)

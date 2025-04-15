@@ -265,3 +265,4 @@ E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\System.Private.Windows.Core
 E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\package-lock.json
 E:\DATN\HRMmanagement\HRMmanagement\bin\Debug\net8.0\package.json
+E:\DATN\HRMmanagement\HRMmanagement\obj\Debug\net8.0\HRMmanagement.sourcelink.json
