@@ -44,7 +44,7 @@ public partial class Payroll
     [Display(Name = "Ngày tạo")]
     [DataType(DataType.DateTime)]
     public DateTime? CreatedAt { get; set; }
-
+    public string? Status { get; set; }
     [Display(Name = "Nhân viên")]
     public virtual Employee? Employee { get; set; }
 }

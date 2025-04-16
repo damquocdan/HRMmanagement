@@ -11,7 +11,8 @@ namespace HRMmanagement.Controllers
     public class AttendancesController : Controller
     {
         private readonly HrmanagementContext _context;
-
+        private readonly TimeSpan StandardWorkHours = TimeSpan.FromHours(8);
+        private readonly TimeSpan LateThreshold = new TimeSpan(8, 30, 0); // 8:30 AM
         public AttendancesController(HrmanagementContext context)
         {
             _context = context;
@@ -51,6 +52,7 @@ namespace HRMmanagement.Controllers
             }
 
             var today = DateOnly.FromDateTime(DateTime.UtcNow); // Use UTC for consistency
+            var currentTime = DateTime.UtcNow;
             var existingAttendance = await _context.Attendances
                 .FirstOrDefaultAsync(a => a.EmployeeId == attendance.EmployeeId && a.AttendanceDate == today);
 
@@ -61,7 +63,7 @@ namespace HRMmanagement.Controllers
                     EmployeeId = attendance.EmployeeId,
                     AttendanceDate = today,
                     CheckInTime = DateTime.UtcNow,
-                    Status = "Present",
+                    Status = currentTime.TimeOfDay > LateThreshold ? "Late" : "Present",
                     CreatedAt = DateTime.UtcNow
                 };
                 _context.Add(newAttendance);
@@ -73,8 +75,24 @@ namespace HRMmanagement.Controllers
 
                 if (existingAttendance.CheckInTime.HasValue && existingAttendance.CheckOutTime.HasValue)
                 {
-                    var workHours = (existingAttendance.CheckOutTime.Value - existingAttendance.CheckInTime.Value).TotalHours;
-                    existingAttendance.OvertimeHours = workHours > 8 ? (decimal)(workHours - 8) : 0;
+                    var workDuration = existingAttendance.CheckOutTime.Value - existingAttendance.CheckInTime.Value;
+
+                    // Calculate overtime
+                    existingAttendance.OvertimeHours = workDuration > StandardWorkHours
+                        ? (decimal)(workDuration - StandardWorkHours).TotalHours
+                        : 0;
+
+                    // Update status based on work hours
+                    if (workDuration.TotalHours < 8)
+                    {
+                        existingAttendance.Status = "Late"; // Insufficient hours considered Late
+                    }
+                    else
+                    {
+                        existingAttendance.Status = existingAttendance.Status == "Late"
+                            ? "Late"
+                            : "Present"; // Maintain Late if already Late, else Present
+                    }
                 }
 
                 _context.Update(existingAttendance);

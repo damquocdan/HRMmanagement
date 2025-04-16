@@ -43,6 +43,19 @@ namespace HRMmanagement.Controllers
 
             return View(recruitment);
         }
+        [HttpPost]
+        public IActionResult FromHome()
+        {
+            string name = Request.Form["name"];
+            string email = Request.Form["email"];
+            string description = Request.Form["description"];
+
+            TempData["Name"] = name;
+            TempData["Email"] = email;
+            TempData["Description"] = description;
+
+            return RedirectToAction("Create");
+        }
 
         // GET: Recruitments/Create
         public IActionResult Create()

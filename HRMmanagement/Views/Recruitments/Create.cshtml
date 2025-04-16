@@ -1,188 +1,156 @@
 ﻿@model HRMmanagement.Models.Recruitment
 
 @{
-    ViewData["Title"] = "Tuyển dụng";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Tuyển Dụng - Xưởng Giày Thành Công";
 }
 
 <style>
-    .row {
-        margin: 20px 0;
+    body {
+        background: rgba(0, 0, 0, 0) url(../img/header.jpg) repeat fixed center 0 / cover;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
     }
 
-    /* Tiêu đề chính */
-    h1 {
-        color: #213d86;
-        font-weight: 700;
+    .container {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 50px;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h1, h4 {
+        color: #ffa500;
         text-align: center;
-        margin-bottom: 10px;
+        text-transform: uppercase;
     }
 
-    /* Tiêu đề phụ */
-    h4 {
-        color: #00adef;
-        font-weight: 500;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    /* Đường phân cách */
     hr {
-        border-top: 2px solid #f7941c;
+        border-color: #ffa500;
         margin: 20px 0;
     }
 
-    /* Alert thông báo */
     .alert-success {
-        background-color: #00984b;
-        color: white;
+        background-color: #ffa500;
+        color: #000000;
         border: none;
         border-radius: 5px;
-        padding: 10px;
         margin-bottom: 20px;
+        text-align: center;
     }
 
-    .alert-danger {
-        background-color: #f7941c;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        margin-bottom: 20px;
-    }
-
-    /* Form group */
     .form-group {
         margin-bottom: 20px;
     }
 
         .form-group label {
-            color: #213d86;
-            font-weight: 600;
-            font-size: 16px;
+            color: #ffa500;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 10px;
         }
 
-    /* Input và select */
     .form-control {
-        border: 1px solid #00adef;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #ffa500;
         border-radius: 5px;
-        padding: 8px;
-        font-size: 14px;
-        transition: border-color 0.3s ease;
+        padding: 10px;
     }
 
         .form-control:focus {
-            border-color: #0091c8;
-            box-shadow: 0 0 5px rgba(0, 173, 239, 0.3);
-            outline: none;
+            border-color: #ffa500;
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
         }
 
-    /* Nút bấm */
-    .btn {
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-success {
-        background-color: #00984b;
-        border: none;
-    }
-
-        .btn-success:hover {
-            background-color: #007a3c;
-            transform: translateY(-2px);
-        }
-
-    /* Thông báo lỗi */
     .text-danger {
-        color: #f7941c;
-        font-size: 12px;
+        color: #ffffff !important;
     }
 
-    /* Responsive design */
-    @@media (max-width: 768px) {
-        .col-md-6 {
-            width: 100%;
-            padding: 0 15px;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h4 {
-            font-size: 18px;
-        }
+    .btn-custom {
+        background-color: #ffa500;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        width: 100%;
     }
+
+        .btn-custom:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
 </style>
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["SuccessMessage"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="container">
+    <h1>Tuyển Dụng - Xưởng Giày Thành Công</h1>
+    <h4>Thông Tin Ứng Viên</h4>
+    <hr />
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label">Họ và Tên</label>
+                    <input asp-for="FullName" class="form-control" value="@TempData["Name"]" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" class="form-control" value="@TempData["Email"]" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label">Số Điện Thoại</label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AppliedPositionId" class="control-label">Vị Trí Ứng Tuyển</label>
+                    <select asp-for="AppliedPositionId" class="form-control" asp-items="ViewBag.AppliedPositionId"></select>
+                    <span asp-validation-for="AppliedPositionId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Cvpath" class="control-label">Tải Lên CV</label>
+                    <input type="file" name="CvFile" class="form-control" />
+                    <span asp-validation-for="Cvpath" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="InterviewDate" class="control-label">Ngày Phỏng Vấn (Dự Kiến)</label>
+                    <input asp-for="InterviewDate" class="form-control" type="date" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                    <span asp-validation-for="InterviewDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" hidden>
+                    <input asp-for="Status" class="form-control" />
+                </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Gửi Đăng Ký" class="btn btn-custom" />
+                </div>
+            </form>
+        </div>
     </div>
-}
-
-<h1>Đăng ký tuyển dụng</h1>
-
-<h4>Thông tin ứng viên</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label">Họ và tên</label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Email" class="control-label">Email</label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label">Số điện thoại</label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="AppliedPositionId" class="control-label">Vị trí ứng tuyển</label>
-                <select asp-for="AppliedPositionId" class="form-control" asp-items="ViewBag.AppliedPositionId"></select>
-                <span asp-validation-for="AppliedPositionId" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Cvpath" class="control-label">Tải lên CV</label>
-                <input type="file" name="CvFile" class="form-control" />
-                <span asp-validation-for="Cvpath" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="InterviewDate" class="control-label">Ngày phỏng vấn (dự kiến)</label>
-                <input asp-for="InterviewDate" class="form-control" type="date" min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
-                <span asp-validation-for="InterviewDate" class="text-danger"></span>
-            </div>
-
-
-            <div class="form-group" hidden>
-                <input asp-for="Status" class="form-control" />
-            </div>
-
-            <div class="form-group mt-3">
-                <input type="submit" value="Gửi đăng ký" class="btn btn-success" />
-            </div>
-        </form>
-    </div>
-    <div class="col-md-4"></div>
 </div>
 
 @section Scripts {

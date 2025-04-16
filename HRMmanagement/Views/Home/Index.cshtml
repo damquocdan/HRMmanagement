@@ -1,8 +1,499 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<header id="home" class="header">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="header-content row">
+			<div id="owl-demo" class="owl-carousel header1">
+				<div>
+					<div class="col-xs-12 col-sm-6 col-md-6 header-text">
+						<h2 class="wow bounceIn animated" data-wow-delay=".40s">QUẢN LÝ <span>NHÂN SỰ</span> HIỆU QUẢ <br />CHO CÔNG TY GIÀY THÀNH CÔNG</h2>
+						<h3 class="wow bounceIn animated" data-wow-delay=".50s">TỐI ƯU HÓA QUẢN LÝ NHÂN SỰ</h3>
+						<p class="wow bounceIn animated" data-wow-delay=".60s">Hệ thống quản lý nhân sự toàn diện, giúp công ty Giày Thành Công vận hành hiệu quả và chuyên nghiệp.</p>
+						<p>
+							<a asp-controller="Attendances" asp-action="Create">
+							<div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+									<i class="hbtn"></i> <span>Điểm danh</span>
+
+							</div>
+							</a>
+						</p>
+					</div>
+				</div>
+				<div>
+					<div class="col-xs-12 col-sm-6 col-md-6 header-text">
+						<h2 class="wow bounceIn animated" data-wow-delay=".40s">QUẢN LÝ <span>NGHỈ PHÉP</span> DỄ DÀNG <br />CHO CÔNG TY GIÀY THÀNH CÔNG</h2>
+						<h3 class="wow bounceIn animated" data-wow-delay=".50s">TỐI ƯU HÓA QUẢN LÝ NHÂN SỰ</h3>
+						<p class="wow bounceIn animated" data-wow-delay=".60s">Hệ thống quản lý nhân sự toàn diện, giúp công ty Giày Thành Công vận hành hiệu quả và chuyên nghiệp.</p>
+						<p>
+							<a asp-controller="LeaveRequests" asp-action="Create">
+							<div class="btn btn-primary btn-lg btn-ornge wow bounceIn animated" data-wow-delay="1s">
+
+									<i class="hbtn"></i> <span>Xin nghỉ phép</span>
+
+							</div>
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- =============== container end =============== -->
+</header>
+<!-- =============== About =============== -->
+<section id="about" class="">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 wow fadeInDown animated" data-wow-delay=".5s">
+				<h2>Giới Thiệu Về Công Ty Giày Thành Công</h2>
+				<p>Công ty Giày Thành Công tự hào là đơn vị hàng đầu trong lĩnh vực sản xuất và phân phối giày dép chất lượng cao. Với hệ thống quản lý nhân sự hiện đại, chúng tôi đảm bảo môi trường làm việc chuyên nghiệp, hiệu quả và thân thiện.</p>
+				<p>Chúng tôi cam kết xây dựng đội ngũ nhân sự vững mạnh, hỗ trợ nhân viên phát triển kỹ năng và đóng góp vào sự phát triển bền vững của công ty. Hệ thống quản lý nhân sự của chúng tôi giúp tối ưu hóa quy trình, từ điểm danh, quản lý nghỉ phép đến phát triển đội ngũ.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 wow fadeInRight animated" data-wow-delay=".5s">
+				<img src="assets/img/about-img.jpg" />
+			</div>
+		</div>
+	</div>
+	<!-- =============== container end =============== -->
+</section>
+<section id="team" class="">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="title">
+				<h2>Đội Ngũ Nhân Sự Giày Thành Công</h2>
+				<p>Gặp gỡ đội ngũ nhân sự tận tâm và chuyên nghiệp của chúng tôi.</p>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInDown animated" data-wow-delay=".1s">
+				<div class="timg"><img src="assets/img/team-img1.jpg" /></div>
+				<div class="t-box">
+					<h3>MOHD SUBHAN</h3>
+					<span>Giám đốc Sáng tạo</span>
+					<ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInUp animated" data-wow-delay=".2s">
+				<div class="timg"><img src="assets/img/team-img2.jpg" /></div>
+				<div class="t-box">
+					<h3>Mohd Rahman</h3>
+					<span>Nhà thiết kế giao diện & website</span>
+					<ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInDown animated" data-wow-delay=".3s">
+				<div class="timg"><img src="assets/img/team-img3.jpg" /></div>
+				<div class="t-box">
+					<h3>ZEENAT SUBHAN</h3>
+					<span>Lập trình viên cao cấp</span>
+					<ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInUp animated" data-wow-delay=".4s">
+				<div class="timg"><img src="assets/img/team-img4.jpg" /></div>
+				<div class="t-box">
+					<h3>MOHD SAIF</h3>
+					<span>Nhà biên tập nội dung</span>
+					<ul class="social-links">
+						<li><a class="wow fadeInUp animated" href="index.html#"><i class="fa fa-facebook"></i></a></li>
+						<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-twitter"></i></a></li>
+						<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- =============== container end =============== -->
+</section>
+<!-- =============== Services =============== -->
+<section id="Services" class="">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 wow fadeInLeft animated" data-wow-delay=".5s">
+				<img src="assets/img/services-img.jpg" class="img-left" />
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 wow fadeInRight animated" data-wow-delay=".5s">
+				<h2>Dịch Vụ Quản Lý Nhân Sự</h2>
+				<p>Chúng tôi cung cấp các giải pháp quản lý nhân sự toàn diện cho công ty Giày Thành Công, từ quản lý điểm danh, nghỉ phép, đến phát triển đội ngũ nhân sự. Hệ thống của chúng tôi giúp tối ưu hóa quy trình, nâng cao hiệu suất làm việc.</p>
+				<p>Các dịch vụ của chúng tôi bao gồm quản lý hồ sơ nhân sự, theo dõi hiệu suất, đào tạo và phát triển kỹ năng, đảm bảo môi trường làm việc chuyên nghiệp và hiệu quả cho mọi nhân viên.</p>
+			</div>
+		</div>
+	</div>
+	<!-- =============== container end =============== -->
+</section>
+<!-- =============== for box =============== -->
+<section class="for-box">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-3 wow rotateInDownLeft animated" data-wow-delay=".1s">
+				<div class="for-box-crecl">
+					<i class="fa fa-home"></i>
+				</div>
+				<div class="clr1">
+					<h2>
+						QUẢN LÝ<br />ĐIỂM DANH
+					</h2>
+				</div>
+				<div class="wbox">
+					<strong>Quản lý thời gian</strong>
+					<p>
+						Hệ thống điểm danh tự động giúp theo dõi thời gian làm việc của nhân viên một cách chính xác và hiệu quả.
+					</p>
+					<a href="#" class="clr1-a">+</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow rotateInDownLeft animated" data-wow-delay=".2s">
+				<div class="for-box-crecl">
+					<i class="fa fa-code"></i>
+				</div>
+				<div class="clr2">
+					<h2>
+						QUẢN LÝ<br />NGHỈ PHÉP
+					</h2>
+				</div>
+				<div class="wbox">
+					<strong>Xin nghỉ dễ dàng</strong>
+					<p>
+						Hệ thống quản lý nghỉ phép trực tuyến, giúp nhân viên dễ dàng gửi yêu cầu và quản lý theo dõi trạng thái.
+					</p>
+					<a href="#" class="clr2-a">+</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow rotateInDownRight animated" data-wow-delay=".3s">
+				<div class="for-box-crecl">
+					<i class="fa fa-rocket"></i>
+				</div>
+				<div class="clr3">
+					<h2>
+						ĐÀO TẠO<br />NHÂN SỰ
+					</h2>
+				</div>
+				<div class="wbox">
+					<strong>Phát triển kỹ năng</strong>
+					<p>
+						Chương trình đào tạo nhân sự giúp nâng cao kỹ năng và hiệu suất làm việc của đội ngũ nhân viên.
+					</p>
+					<a href="#" class="clr3-a">+</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow rotateInDownRight animated" data-wow-delay=".4s">
+				<div class="for-box-crecl">
+					<i class="fa fa-wifi"></i>
+				</div>
+				<div class="clr4">
+					<h2>
+						THEO DÕI<br />HIỆU SUẤT
+					</h2>
+				</div>
+				<div class="wbox">
+					<strong>Đánh giá nhân sự</strong>
+					<p>
+						Hệ thống theo dõi hiệu suất giúp đánh giá và cải thiện năng suất làm việc của nhân viên.
+					</p>
+					<a href="#" class="clr4-a">+</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =============== Counter =============== -->
+<section class="counter">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="title">
+				<h2>Thành Tựu Của Giày Thành Công</h2>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 wow fadeInUp animated" data-wow-delay=".1s">
+				<i class="fa fa-clock-o size"></i>
+				<h2>522</h2>
+				<span>Giờ làm việc</span>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 wow fadeInUp animated" data-wow-delay=".2s">
+				<i class="fa fa-coffee size"></i>
+				<h2>888</h2>
+				<span>Cốc cà phê</span>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 wow fadeInUp animated" data-wow-delay=".3s">
+				<i class="fa fa-trophy size"></i>
+				<h2>11</h2>
+				<span>Giải thưởng</span>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 wow fadeInUp animated" data-wow-delay=".4s">
+				<i class="fa fa-code size"></i>
+				<h2>55566</h2>
+				<span>Dòng mã</span>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 wow fadeInUp animated" data-wow-delay=".5s">
+				<i class="fa fa-globe size"></i>
+				<h2>133</h2>
+				<span>Khách hàng toàn cầu</span>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 wow fadeInUp animated" data-wow-delay=".6s">
+				<i class="fa fa-rocket size"></i>
+				<h2>77</h2>
+				<span>Dự án hoàn thành</span>
+			</div>
+		</div>
+	</div>
+	<!-- =============== container end =============== -->
+</section>
+<!-- =============== Gallery =============== -->
+<section id="Gallery" class="wow flipInX animated" data-wow-delay=".5s">
+	<div class="title">
+		<h2>Hình Ảnh Hoạt Động Giày Thành Công</h2>
+		<p>Xem những khoảnh khắc nổi bật của công ty Giày Thành Công.</p>
+	</div>
+	<div class="big-demo go-wide" data-js-module="filtering-demo">
+		<div class="container">
+			<div class="row">
+				<div class="filter-button-group button-group js-radio-button-group">
+					<button class="button is-checked" data-filter="*">Hiển thị tất cả</button>
+					<button class="button" data-filter=".webdesign">Quản lý nhân sự</button>
+					<button class="button" data-filter=".ecommerce">Hoạt động sản xuất</button>
+					<button class="button" data-filter=".cms">Đào tạo nhân viên</button>
+					<button class="button" data-filter=".logo">Sự kiện công ty</button>
+				</div>
+			</div>
+		</div>
+		<div class="grid baguetteBoxThree gallery">
+			<div class="element-item transition webdesign " data-category="post-transition">
+				<a href="assets/img/gallery/emp-1.jpg">
+					<img src="assets/img/gallery/emp-1.jpg" />
+					<div class="hover-img">
+						<h2>Quản Lý Nhân Sự</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition ecommerce " data-category="post-transition">
+				<a href="assets/img/gallery/emp-2.jpg">
+					<img src="assets/img/gallery/emp-2.jpg" />
+					<div class="hover-img">
+						<h2>Hoạt Động Sản Xuất</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition webdesign " data-category="post-transition">
+				<a href="assets/img/gallery/emp-3.jpg">
+					<img src="assets/img/gallery/emp-3.jpg" />
+					<div class="hover-img">
+						<h2>Quản Lý Nhân Sự</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item transition ecommerce " data-category="post-transition">
+				<a href="assets/img/gallery/emp-4.jpg">
+					<img src="assets/img/gallery/emp-4.jpg" />
+					<div class="hover-img">
+						<h2>Hoạt Động Sản Xuất</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition logo " data-category="post-transition">
+				<a href="assets/img/gallery/emp-5.jpg">
+					<img src="assets/img/gallery/emp-5.jpg" />
+					<div class="hover-img">
+						<h2>Sự Kiện Công Ty</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition cms " data-category="post-transition">
+				<a href="assets/img/gallery/emp-6.jpg">
+					<img src="assets/img/gallery/emp-6.jpg" />
+					<div class="hover-img">
+						<h2>Đào Tạo Nhân Viên</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition logo " data-category="post-transition">
+				<a href="assets/img/gallery/emp-7.jpg">
+					<img src="assets/img/gallery/emp-7.jpg" />
+					<div class="hover-img">
+						<h2>Sự Kiện Công Ty</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item transition cms " data-category="post-transition">
+				<a href="assets/img/gallery/emp-8.jpg">
+					<img src="assets/img/gallery/emp-8.jpg" />
+					<div class="hover-img">
+						<h2>Đào Tạo Nhân Viên</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition ecommerce " data-category="post-transition">
+				<a href="assets/img/gallery/emp-9.jpg">
+					<img src="assets/img/gallery/emp-9.jpg" />
+					<div class="hover-img">
+						<h2>Hoạt Động Sản Xuất</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition webdesign " data-category="post-transition">
+				<a href="assets/img/gallery/emp-10.jpg">
+					<img src="assets/img/gallery/emp-10.jpg" />
+					<div class="hover-img">
+						<h2>Quản Lý Nhân Sự</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item post-transition logo " data-category="post-transition">
+				<a href="assets/img/gallery/emp-11.jpg">
+					<img src="assets/img/gallery/emp-11.jpg" />
+					<div class="hover-img">
+						<h2>Sự Kiện Công Ty</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+			<div class="element-item transition cms " data-category="post-transition">
+				<a href="assets/img/gallery/emp-12.jpg">
+					<img src="assets/img/gallery/emp-12.jpg" />
+					<div class="hover-img">
+						<h2>Đào Tạo Nhân Viên</h2>
+						<i class="fa fa-camera camera"></i>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="blog" class="">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="title">
+				<h2>Tin Tức Giày Thành Công</h2>
+				<p>Cập nhật những thông tin mới nhất về hoạt động của công ty.</p>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 wow fadeInUp animated" data-wow-delay=".1s">
+				<div class="blog-img">
+					<img src="assets/img/blog1.JPG" />
+				</div>
+				<div class="row">
+					<div class="data">30</div>
+					<div class="month">Tháng Ba</div>
+				</div>
+				<div class="row">
+					<h3>Chương trình đào tạo nhân sự mới</h3>
+					<p>Công ty Giày Thành Công tổ chức khóa đào tạo kỹ năng cho nhân viên mới, nâng cao hiệu suất làm việc.</p>
+					<a href="blog-single.html">XEM THÊM</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 wow bounceIn animated" data-wow-delay=".4s">
+				<div class="blog-img">
+					<img src="assets/img/blog2.JPG" />
+				</div>
+				<div class="row">
+					<div class="data">30</div>
+					<div class="month">Tháng Ba</div>
+				</div>
+				<div class="row">
+					<h3>Sự kiện teambuilding 2025</h3>
+					<p>Giày Thành Công tổ chức hoạt động teambuilding, gắn kết đội ngũ nhân sự.</p>
+					<a href="blog-single.html">XEM THÊM</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 wow fadeInDown animated" data-wow-delay=".3s">
+				<div class="blog-img">
+					<img src="assets/img/blog3.JPG" />
+				</div>
+				<div class="row">
+					<div class="data">30</div>
+					<div class="month">Tháng Ba</div>
+				</div>
+				<div class="row">
+					<h3>Nâng cấp hệ thống quản lý nhân sự</h3>
+					<p>Công ty triển khai hệ thống quản lý nhân sự mới, tối ưu hóa quy trình vận hành.</p>
+					<a href="blog-single.html">XEM THÊM</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- =============== container end =============== -->
+</section>
+<section id="contact">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="title">
+				<h2>Liên Hệ Với Giày Thành Công</h2>
+				<p>Kết nối với chúng tôi để biết thêm về các giải pháp quản lý nhân sự.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 wow bounceIn animated" data-wow-delay=".1s">
+				<form asp-controller="Recruitments" asp-action="FromHome" method="post">
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" placeholder="Tên" required />
+					</div>
+					<div class="form-group">
+						<input type="email" name="email" class="form-control" placeholder="Email" required />
+					</div>
+					<div class="form-group">
+						<textarea name="description" class="form-control" rows="5" placeholder="Tin nhắn" required></textarea>
+					</div>
+					<button type="submit" class="btn btn-success">Gửi tin nhắn</button>
+				</form>
+
+
+			</div>
+		</div>
+	</div><!-- =============== container end =============== -->
+</section>
+<footer id="footer">
+	<!-- =============== container =============== -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<ul class="social-links">
+					<li><a class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-name: fadeInUp;"><i class="fa fa-facebook"></i></a></li>
+					<li><a data-wow-delay=".1s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;"><i class="fa fa-twitter"></i></a></li>
+					<li><a data-wow-delay=".2s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"><i class="fa fa-google-plus"></i></a></li>
+					<li><a data-wow-delay=".4s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"><i class="fa fa-pinterest"></i></a></li>
+					<li><a data-wow-delay=".5s" class="wow fadeInUp animated" href="index.html#" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;"><i class="fa fa-envelope"></i></a></li>
+				</ul>
+				<p class="copyright">
+					© 2025 Công Ty Giày Thành Công. Tạo bởi <a href="http://templatestock.co">Template Stock</a>
+				</p>
+			</div>
+			<div data-wow-delay=".6s" class="col-xs-12 col-sm-6 col-md-6 wow bounceIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: bounceIn;">
+				<section class="widget widget_text" id="text-15">
+					<h3 class="widget-title">Việt Nam</h3>
+					<div class="textwidget">
+						123, Đường Lê Lợi, Quận 1, TP.HCM,<br>
+						<p>
+							Tel: 01 234-56786<br>
+							Mobile: 01 234-56786<br>
+							E-mail: <a href="#">info@giaythanhcong.com</a>
+						</p>
+						<a href="#">Xem bản đồ</a> →
+					</div>
+				</section>
+			</div>
+		</div>
+	</div><!-- =============== container end =============== -->
+</footer>

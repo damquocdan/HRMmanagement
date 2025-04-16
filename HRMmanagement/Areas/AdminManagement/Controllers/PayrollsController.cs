@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HRMmanagement.Models;
+using Newtonsoft.Json;
 
 namespace HRMmanagement.Areas.AdminManagement.Controllers
 {
@@ -12,10 +16,12 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
     public class PayrollsController : Controller
     {
         private readonly HrmanagementContext _context;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public PayrollsController(HrmanagementContext context)
+        public PayrollsController(HrmanagementContext context, IHttpClientFactory httpClientFactory)
         {
             _context = context;
+            _httpClientFactory = httpClientFactory;
         }
 
         // GET: AdminManagement/Payrolls
@@ -164,6 +170,7 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
                             Tax = tax,
                             Insurance = insurance,
                             NetSalary = netSalary,
+                            Status = "Chưa thanh toán",
                             CreatedAt = DateTime.Now
                         };
                         _context.Payrolls.Add(newPayroll);
@@ -200,79 +207,6 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
             return View(payroll);
         }
 
-        // GET: AdminManagement/Payrolls/Create
-        public IActionResult Create()
-        {
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName");
-            return View();
-        }
-
-        // POST: AdminManagement/Payrolls/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PayrollId,EmployeeId,Month,Year,BaseSalary,Allowance,Bonus,Tax,Insurance,NetSalary,CreatedAt")] Payroll payroll)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(payroll);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName", payroll.EmployeeId);
-            return View(payroll);
-        }
-
-        // GET: AdminManagement/Payrolls/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var payroll = await _context.Payrolls.FindAsync(id);
-            if (payroll == null)
-            {
-                return NotFound();
-            }
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName", payroll.EmployeeId);
-            return View(payroll);
-        }
-
-        // POST: AdminManagement/Payrolls/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PayrollId,EmployeeId,Month,Year,BaseSalary,Allowance,Bonus,Tax,Insurance,NetSalary,CreatedAt")] Payroll payroll)
-        {
-            if (id != payroll.PayrollId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(payroll);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PayrollExists(payroll.PayrollId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["EmployeeId"] = new SelectList(_context.Employees, "EmployeeId", "FullName", payroll.EmployeeId);
-            return View(payroll);
-        }
-
         // GET: AdminManagement/Payrolls/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -305,6 +239,126 @@ namespace HRMmanagement.Areas.AdminManagement.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        // GET: AdminManagement/Payrolls/PaymentMomo/5
+        public async Task<IActionResult> PaymentMomo(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var payroll = await _context.Payrolls
+                .FirstOrDefaultAsync(p => p.PayrollId == id);
+            if (payroll == null)
+            {
+                return NotFound();
+            }
+
+            // Check if NetSalary is null, provide a default value or handle accordingly
+            if (!payroll.NetSalary.HasValue)
+            {
+                TempData["Error"] = "Không thể thanh toán vì lương ròng không hợp lệ.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var paymentUrl = await CreateMoMoPayment(payroll.PayrollId, payroll.NetSalary.Value);
+            if (!string.IsNullOrEmpty(paymentUrl))
+            {
+                HttpContext.Session.SetInt32("PendingPayrollId", payroll.PayrollId);
+                return Redirect(paymentUrl);
+            }
+            else
+            {
+                TempData["Error"] = "Không thể tạo yêu cầu thanh toán MoMo.";
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+        // GET: AdminManagement/Payrolls/MoMoCallback
+        [HttpGet]
+        public async Task<IActionResult> MoMoCallback(string orderId, string resultCode, string message)
+        {
+            var payroll = await _context.Payrolls
+                .FirstOrDefaultAsync(p => "MM" + p.PayrollId == orderId);
+            if (payroll == null)
+            {
+                TempData["Error"] = "Không tìm thấy bản ghi lương.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (resultCode == "0")
+            {
+                payroll.Status = "Đã thanh toán";
+                _context.Payrolls.Update(payroll);
+                await _context.SaveChangesAsync();
+
+                TempData["Success"] = "Thanh toán MoMo thành công.";
+            }
+            else
+            {
+                TempData["Error"] = $"Thanh toán MoMo thất bại: {message}";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        // Hàm tạo yêu cầu thanh toán MoMo
+        private async Task<string> CreateMoMoPayment(int payrollId, decimal amount)
+        {
+            string endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
+            string partnerCode = "MOMO_ATM_DEV";
+            string accessKey = "w9gEg8bjA2AM2Cvr";
+            string secretKey = "mD9QAVi4cm9N844jh5Y2tqjWaaJoGVFM";
+            string orderInfo = $"Thanh toán lương #{payrollId}";
+            string redirectUrl = "https://localhost:7268/AdminManagement/Payrolls/MoMoCallback";
+            string ipnUrl = "https://localhost:7268/AdminManagement/Payrolls/MoMoCallback";
+            string requestId = Guid.NewGuid().ToString();
+            string orderIdStr = $"MM{payrollId}";
+            string amountStr = ((int)amount).ToString();
+
+            var rawData = $"accessKey={accessKey}&amount={amountStr}&extraData=&ipnUrl={ipnUrl}&orderId={orderIdStr}&orderInfo={orderInfo}&partnerCode={partnerCode}&redirectUrl={redirectUrl}&requestId={requestId}&requestType=payWithATM";
+            var signature = HmacSha256(secretKey, rawData);
+
+            var requestData = new
+            {
+                partnerCode,
+                partnerName = "HRMmanagement",
+                storeId = "HRMStore",
+                requestId,
+                amount = amountStr,
+                orderId = orderIdStr,
+                orderInfo,
+                redirectUrl,
+                ipnUrl,
+                lang = "vi",
+                requestType = "payWithATM",
+                autoCapture = true,
+                extraData = "",
+                signature
+            };
+
+            using var client = _httpClientFactory.CreateClient();
+            var json = JsonConvert.SerializeObject(requestData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(endpoint, content);
+            if (response.IsSuccessStatusCode)
+            {
+                var responseData = JsonConvert.DeserializeObject<dynamic>(await response.Content.ReadAsStringAsync());
+                return responseData.payUrl;
+            }
+
+            return null;
+        }
+
+        // Hàm tạo chữ ký HMAC SHA256
+        private string HmacSha256(string key, string data)
+        {
+            using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key));
+            var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(data));
+            return BitConverter.ToString(hash).Replace("-", "").ToLower();
         }
 
         private bool PayrollExists(int id)

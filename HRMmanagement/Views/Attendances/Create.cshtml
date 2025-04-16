@@ -1,186 +1,151 @@
 ﻿@{
-    ViewData["Title"] = "Scan Attendance";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Điểm Danh Nhân Sự";
 }
+
 <style>
-    .row {
-        margin: 20px 0;
+    body {
+        background: rgba(0, 0, 0, 0) url(../img/header.jpg) repeat fixed center 0 / cover;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
     }
 
-    /* Tiêu đề chính */
-    h1 {
-        color: #213d86;
-        font-weight: 700;
+    .container {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 1060px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h1, h4 {
+        color: #ffa500;
         text-align: center;
-        margin-bottom: 10px;
+        text-transform: uppercase;
     }
 
-    /* Tiêu đề phụ */
-    h4 {
-        color: #00adef;
-        font-weight: 500;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    /* Đường phân cách */
     hr {
-        border-top: 2px solid #f7941c;
+        border-color: #ffa500;
         margin: 20px 0;
     }
 
-    /* Alert thông báo */
     .alert-success {
-        background-color: #00984b;
-        color: white;
+        background-color: #ffa500;
+        color: #000000;
         border: none;
         border-radius: 5px;
-        padding: 10px;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     .alert-danger {
-        background-color: #f7941c;
-        color: white;
+        background-color: #ffffff;
+        color: #000000;
         border: none;
         border-radius: 5px;
-        padding: 10px;
         margin-bottom: 20px;
+        text-align: center;
     }
 
-    /* Form group */
     .form-group {
         margin-bottom: 20px;
+        text-align: center;
     }
 
         .form-group label {
-            color: #213d86;
-            font-weight: 600;
-            font-size: 16px;
+            color: #ffa500;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 10px;
         }
 
-    /* Nút bấm */
-    .btn {
-        padding: 10px 20px;
+    video, canvas {
+        border: 2px solid #ffa500;
         border-radius: 5px;
-        font-weight: 600;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        background-color: #000000;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
     }
 
-    .btn-primary {
-        background-color: #00adef;
+    .btn-custom {
+        background-color: #ffa500;
+        color: #000000;
         border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin: 5px;
     }
 
-        .btn-primary:hover {
-            background-color: #0091c8;
-            transform: translateY(-2px);
+        .btn-custom:hover {
+            background-color: #ffffff;
+            color: #000000;
         }
 
     .btn-secondary {
-        background-color: #213d86;
-        border: none;
+        background-color: #ffffff;
+        color: #000000;
     }
 
         .btn-secondary:hover {
-            background-color: #1a2f6b;
-            transform: translateY(-2px);
+            background-color: #ffa500;
+            color: #000000;
         }
 
-    .btn-success {
-        background-color: #00984b;
-        border: none;
-    }
-
-        .btn-success:hover {
-            background-color: #007a3c;
-            transform: translateY(-2px);
-        }
-
-    .btn:disabled {
-        background-color: #cccccc;
-        cursor: not-allowed;
-    }
-
-    /* Video webcam */
-    #webcam {
-        border: 2px solid #f7941c;
-        border-radius: 5px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Kết quả quét */
     #result {
-        background-color: #e6f3fa;
+        background: rgba(255, 255, 255, 0.1);
         padding: 15px;
         border-radius: 5px;
-        border: 1px solid #00adef;
+        border: 1px solid #ffa500;
+        color: #ffffff;
     }
-
-        #result label {
-            color: #213d86;
-            font-weight: 600;
-        }
 
     #scanResult {
-        color: #00984b;
-        font-size: 16px;
-        margin: 10px 0;
-    }
-
-    /* Responsive design */
-    @@media (max-width: 768px) {
-        .col-md-6 {
-            width: 100%;
-            padding: 0 15px;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h4 {
-            font-size: 18px;
-        }
+        color: #ffa500;
+        font-weight: bold;
+        font-size: 1.2em;
     }
 </style>
-<h1>Quét Chấm Công</h1>
-<h4>Quét Mã QR</h4>
-<hr />
 
-@if (TempData["Success"] != null)
-{
-    <div class="alert alert-success">@TempData["Success"]</div>
-}
+<div class="container">
+    <h1>Điểm Danh Nhân Sự - Xưởng Giày Thành Công</h1>
+    <h4>Quét Mã QR Để Chấm Công</h4>
+    <hr />
 
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
 
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label>Hình Ảnh Từ Webcam</label>
-            <video id="webcam" autoplay playsinline width="100%"></video>
-            <canvas id="canvas" style="display:none;"></canvas>
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Hình Ảnh Từ Webcam</label>
+                <video id="webcam" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+            <div class="form-group">
+                <button id="startScan" class="btn btn-custom">Bắt Đầu Quét</button>
+                <button id="stopScan" class="btn btn-custom btn-secondary" disabled>Dừng Quét</button>
+            </div>
+            <div id="result" class="form-group">
+                <label>Kết Quả Quét:</label>
+                <p id="scanResult">Đang chờ quét...</p>
+            </div>
+            <form id="attendanceForm" asp-action="ScanAttendance" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" id="employeeId" name="EmployeeId" />
+            </form>
         </div>
-        <div class="form-group">
-            <button id="startScan" class="btn btn-primary">Bắt Đầu Quét</button>
-            <button id="stopScan" class="btn btn-secondary" disabled>Dừng Quét</button>
-        </div>
-        <div id="result" class="form-group">
-            <label>Kết Quả Quét:</label>
-            <p id="scanResult">Đang chờ quét...</p>
-        </div>
-        <form id="attendanceForm" asp-action="ScanAttendance" method="post">
-            @Html.AntiForgeryToken()
-            <input type="hidden" id="employeeId" name="EmployeeId" />
-        </form>
     </div>
-    <div class="col-md-3"></div>
 </div>
 
 @section Scripts {
@@ -255,7 +220,6 @@
                         const employeeId = match[1];
                         scanResult.textContent = `Mã Nhân Viên: ${employeeId}`;
                         employeeIdInput.value = employeeId;
-                        // Automatically submit the form
                         attendanceForm.submit();
                     } else {
                         scanResult.textContent = "Định dạng mã QR không hợp lệ.";

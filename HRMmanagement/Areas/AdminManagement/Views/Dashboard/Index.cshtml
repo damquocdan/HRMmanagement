@@ -3,5 +3,123 @@
     Layout = "~/Areas/AdminManagement/Views/Shared/Admin.cshtml";
 }
 
-<h1>Dashboard</h1>
-<p>Đây là nội dung trang chủ admin</p>
+<div class="container-fluid">
+    <h1 class="mt-4">Dashboard</h1>
+    <p>Đây là nội dung trang chủ admin</p>
+
+    <div class="row">
+        <!-- Total Employees -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Tổng số nhân viên
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewData["TotalEmployees"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Departments -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Tổng số phòng ban
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewData["TotalDepartments"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-building fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Leave Requests -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Yêu cầu nghỉ phép chờ duyệt
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewData["PendingLeaveRequests"]</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Payroll This Month -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Tổng lương tháng này
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@(((decimal)ViewData["TotalPayrollThisMonth"]).ToString("N0")) VNĐ</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-money-bill fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Attendance -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Điểm danh gần đây</h6>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nhân viên</th>
+                        <th>Ngày</th>
+                        <th>Giờ vào</th>
+                        <th>Giờ ra</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var attendance in (List<HRMmanagement.Models.Attendance>)ViewData["RecentAttendance"])
+                    {
+                        <tr>
+                            <td>@attendance.Employee.FullName</td>
+                            <td>@attendance.AttendanceDate?.ToString("dd/MM/yyyy")</td>
+                            <td>@(attendance.CheckInTime?.ToString("HH:mm") ?? "N/A")</td>
+                            <td>@(attendance.CheckOutTime?.ToString("HH:mm") ?? "N/A")</td>
+                            <td>@attendance.Status</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add any custom JavaScript if needed
+    </script>
+}

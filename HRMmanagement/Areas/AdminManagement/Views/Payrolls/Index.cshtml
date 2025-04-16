@@ -86,6 +86,9 @@
             <th>
                 <i class="far fa-clock" style="color: #213d86;"></i> @Html.DisplayNameFor(model => model.CreatedAt)
             </th>
+            <th>
+                Trạng thái
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -121,6 +124,12 @@
                     @item.CreatedAt?.ToString("dd/MM/yyyy")
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-action="PaymentMomo" asp-route-id="@item.PayrollId" class="btn btn-sm btn-outline-primary" style="color: #213d86; border-color: #00adef;">
+                        Thanh toán
+                    </a>
                     <a asp-action="Details" asp-route-id="@item.PayrollId" class="btn btn-info btn-sm" style="background-color: #213d86; border-color: #213d86;"><i class="fas fa-info-circle"></i> Chi Tiết</a>
                     <a asp-action="Delete" asp-route-id="@item.PayrollId" class="btn btn-danger btn-sm" style="background-color: #f7941c; border-color: #f7941c;"><i class="fas fa-trash-alt"></i> Xóa</a>
                 </td>

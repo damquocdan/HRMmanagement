@@ -5,8 +5,264 @@
       "PackagePath": "staticwebassets\\HRMmanagement.v8xibr4bkg.bundle.scp.css"
     },
     {
-      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\css\\baguetteBox.css",
+      "PackagePath": "staticwebassets\\assets\\css\\baguetteBox.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\css\\isotope-docs.css",
+      "PackagePath": "staticwebassets\\assets\\css\\isotope-docs.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\assets\\font\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\font\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\assets\\font\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\AjaxLoader.gif",
+      "PackagePath": "staticwebassets\\assets\\img\\AjaxLoader.gif"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\about-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\about-img.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\blog1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog1.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\blog2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog2.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\blog3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog3.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\contact-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\contact-bg.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\dan-4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\dan-4.png"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\ficon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\ficon.png"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\footer-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\footer-bg.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-1.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-10.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-11.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-12.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-2.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-3.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-4.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-5.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-6.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-7.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-8.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\gallery\\emp-9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\emp-9.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\grabbing.png",
+      "PackagePath": "staticwebassets\\assets\\img\\grabbing.png"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\header.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\header.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\header2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\header2.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\header4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\header4.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\loading-cylon-red.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\loading-cylon-red.svg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\services-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services-bg.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\services-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services-img.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\team-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-bg.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\team-img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-img1.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\team-img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-img2.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\team-img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-img3.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\img\\team-img4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team-img4.jpg"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\baguetteBox.js",
+      "PackagePath": "staticwebassets\\assets\\js\\baguetteBox.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\creative.js",
+      "PackagePath": "staticwebassets\\assets\\js\\creative.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\isotope-docs.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\isotope-docs.min.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\jquery.easing.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.easing.min.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\jquery.fittext.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.fittext.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\jquery.nicescroll.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.nicescroll.min.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\wow.min.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\owl-carousel\\AjaxLoader.gif",
+      "PackagePath": "staticwebassets\\assets\\owl-carousel\\AjaxLoader.gif"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\owl-carousel\\grabbing.png",
+      "PackagePath": "staticwebassets\\assets\\owl-carousel\\grabbing.png"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\owl-carousel\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\assets\\owl-carousel\\owl.carousel.css"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\owl-carousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\assets\\owl-carousel\\owl.carousel.js"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\assets\\owl-carousel\\owl.theme.css",
+      "PackagePath": "staticwebassets\\assets\\owl-carousel\\owl.theme.css"
     },
     {
       "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\dist\\css\\adminlte.css",
@@ -299,6 +555,10 @@
     {
       "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\images\\QRCodes\\qr_3.png",
       "PackagePath": "staticwebassets\\images\\QRCodes\\qr_3.png"
+    },
+    {
+      "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
     },
     {
       "Id": "E:\\DATN\\HRMmanagement\\HRMmanagement\\wwwroot\\images\\logo.png",
