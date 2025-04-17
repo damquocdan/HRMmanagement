@@ -31,7 +31,7 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.FullName)</td>
                 <td>
-                    <i class="fas fa-birthday-cake"></i>: @Html.DisplayFor(modelItem => item.DateOfBirth)<br />
+                    <i class="fas fa-birthday-cake"></i>: @item.DateOfBirth?.ToString("dd/MM/yyyy")<br />
                     <i class="fas fa-venus-mars"></i>: @Html.DisplayFor(modelItem => item.Gender)<br />
                     <i class="fas fa-map-marker-alt"></i>: @Html.DisplayFor(modelItem => item.Address)<br />
                     <i class="fas fa-phone"></i>: @Html.DisplayFor(modelItem => item.Phone)<br />
@@ -40,9 +40,9 @@
                     @Html.DisplayNameFor(model => model.Department.DepartmentName): @Html.DisplayFor(modelItem => item.Department.DepartmentName)
                 </td>
                 <td>@Html.DisplayFor(modelItem => item.BaseSalary)</td>
-                <td>@Html.DisplayFor(modelItem => item.ContractStartDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.ContractEndDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                <td>@item.ContractStartDate?.ToString("dd/MM/yyyy")</td>
+                <td>@item.ContractEndDate?.ToString("dd/MM/yyyy")</td>
+                <td>@item.CreatedAt?.ToString("dd/MM/yyyy")</td>
                 <td>
                     @if (!string.IsNullOrEmpty(item.QrcodeData))
                     {
